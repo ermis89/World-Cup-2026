@@ -1,0 +1,59 @@
+# ════════════════════════════════════════════════════════════════
+#  World Cup 2026 Hub — Daily OneDrive → GitHub Pages sync
+#  Place this file in your repo at:  .github/workflows/worldcup-sync.yml
+#
+#  WHAT IT DOES
+#  Every morning at 08:45 Athens time (05:45 UTC) it downloads the
+#  latest worldcup2026.html from your OneDrive share link and, if it
+#  changed, commits it as index.html — your GitHub Pages site updates
+#  automatically. You can also run it manually from the Actions tab.
+#
+#  SETUP (one time)
+#  1. In OneDrive: right-click worldcup2026.html → Share →
+#     "Anyone with the link" (view) → Copy link.
+#  2. Paste that link below in ONEDRIVE_URL — keep the &download=1
+#     suffix exactly as shown.
+#     Example result:
+#     https://cspcosmos-my.sharepoint.com/:u:/g/personal/..../AbCdEf?e=xyz&download=1
+#  3. No tokens needed — GitHub Actions' built-in permission handles
+#     the commit.
+# ════════════════════════════════════════════════════════════════
+name: Sync World Cup app from OneDrive
+
+on:
+  schedule:
+    - cron: "45 5 * * *"   # 05:45 UTC = 08:45 Athens (EEST)
+  workflow_dispatch: {}     # manual "Run workflow" button
+
+permissions:
+  contents: write
+
+env:
+  # ⬇⬇⬇ PASTE YOUR ONEDRIVE SHARE LINK HERE (keep &download=1) ⬇⬇⬇
+   ONEDRIVE_URL: "https://cspcosmos-my.sharepoint.com/:u:/g/personal/andreadakisj_cspcosmos_onmicrosoft_com/IQCCaqvagksMTYAcLA8u3pQXAYv0NwRZVfPvITQZIUJ2ftY?e=R4yz3x&download=1"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Download latest file from OneDrive
+        run: |
+          curl -fsSL "$ONEDRIVE_URL" -o index.html.new
+          # Safety check: make sure we actually got the app, not an error page
+          grep -q "TOURNAMENT_DATA" index.html.new
+          mv index.html.new index.html
+
+      - name: Commit & publish if changed
+        run: |
+          git config user.name  "wc26-sync-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No changes today — site already up to date."
+          else
+            git commit -m "Daily sync: World Cup 2026 data update ($(date -u +%F))"
+            git push
+          fi
