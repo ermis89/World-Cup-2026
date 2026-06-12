@@ -1,3 +1,4 @@
+**worldcup2026.html**
 
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
@@ -362,6 +363,49 @@ footer .heart{color:var(--red)}
 @media print{
   .ticker-wrap,header.site,.nav-actions,.filters,.btn,footer .base{display:none!important}
   body{background:#fff;color:#000}
+}
+
+/* ═══════════ V2 CREATIVE PACK ═══════════ */
+.sec-head h2{position:relative;padding-bottom:.3em}
+.sec-head h2::after{content:"";position:absolute;left:0;bottom:0;width:62px;height:4px;border-radius:99px;background:linear-gradient(90deg,var(--blue),var(--gold))}
+.hero::after{content:"⚽";position:absolute;right:-50px;top:-40px;font-size:14rem;opacity:.05;transform:rotate(18deg);pointer-events:none}
+.hero .container{position:relative;z-index:1}
+.mcard{padding-left:1.3rem}
+.mcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--blue);opacity:.9}
+.mcard.status-live::before{background:var(--green);box-shadow:0 0 12px rgba(34,197,94,.8)}
+.mcard.status-today::before{background:var(--gold)}
+.mcard.status-done::before{background:rgba(150,155,180,.4)}
+.score{animation:scorein .45s ease}
+@keyframes scorein{from{transform:scale(.72);opacity:0}to{transform:scale(1);opacity:1}}
+.gcard:nth-of-type(3n+2) header{background:linear-gradient(135deg,rgba(255,215,0,.2),rgba(255,215,0,.04))}
+.gcard:nth-of-type(3n) header{background:linear-gradient(135deg,rgba(34,197,94,.18),rgba(34,197,94,.04))}
+.news-list{grid-template-columns:1fr 1fr;max-width:1100px}
+.news-item.featured{grid-column:1/-1;background:linear-gradient(135deg,rgba(0,102,255,.2),rgba(255,215,0,.07));border-color:rgba(255,215,0,.35);padding:1.5rem 1.7rem}
+.news-item.featured h3{font-size:1.32rem;font-family:var(--font-d);line-height:1.32}
+.news-item.featured p{color:var(--text)}
+@media(min-width:880px){nav.tabs{flex-wrap:wrap;overflow:visible}}
+html[lang="el"] nav.tabs button{padding:.5em .66em;font-size:.82rem}
+/* ═══════════ MOBILE PACK ═══════════ */
+#mobileNav{display:none}
+#mobileSheet{display:none}
+@media(max-width:768px){
+  nav.tabs{display:none}
+  #mobileNav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--glass);backdrop-filter:blur(18px);border-top:1px solid var(--glass-brd);justify-content:space-around;padding:.4rem .2rem calc(.4rem + env(safe-area-inset-bottom,0px))}
+  #mobileNav button{background:none;border:none;color:var(--muted);font-size:.58rem;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:.22em;padding:.25em .55em;border-radius:10px;font-family:inherit}
+  #mobileNav button i{font-size:1.1rem}
+  #mobileNav button.active{color:var(--gold)}
+  #mobileSheet{position:fixed;bottom:62px;left:.6rem;right:.6rem;z-index:89;background:var(--navy);border:1px solid var(--glass-brd);border-radius:18px;box-shadow:var(--shadow);padding:.8rem;display:none;grid-template-columns:repeat(3,1fr);gap:.5rem}
+  #mobileSheet.open{display:grid}
+  #mobileSheet button{background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:.8em .4em;font-size:.74rem;font-weight:700;display:flex;flex-direction:column;gap:.35em;align-items:center;font-family:inherit}
+  #mobileSheet button i{font-size:1.05rem;color:var(--blue2)}
+  body{padding-bottom:70px}
+  .filters select,.filters input[type="date"],.filters input[type="text"]{flex:1 1 44%;min-width:0}
+  .news-list{grid-template-columns:1fr}
+  .modal{max-height:94vh}
+  .m-score-line .big{font-size:1.7rem}
+  .tdetail-head h2{font-size:1.4rem}
+  #stadMap{height:300px!important}
+  .sec-head h2{font-size:1.35rem}
 }
 </style>
 </head>
@@ -737,7 +781,7 @@ footer .heart{color:var(--red)}
    confirmed playoff results of March 31 2026).
    ════════════════════════════════════════════════════════════════ */
 const TOURNAMENT_DATA = {
-  lastUpdated: "2026-06-12T08:05:00+03:00",
+  lastUpdated: "2026-06-12T11:00:00+03:00",
   dayOne: "2026-06-11",
 
   /* ---------- 48 TEAMS ---------- */
@@ -996,15 +1040,16 @@ const TOURNAMENT_DATA = {
   pollOptions:["ESP","FRA","ENG","POR","BRA","ARG","GER","NED"],
 
   news:[
-    {date:"2026-06-12",tag:"Recap",title:"Day 1 Recap: Mexico cruise past nine-man South Africa; Korea rally to sink Czechia",body:"Day 1 delivered drama at both ends. At a packed Estadio Azteca, co-hosts Mexico beat South Africa 2-0 — Julián Quiñones lashed home the first goal of the tournament (9') and Raúl Jiménez headed a second (67') for an emotional first-ever World Cup goal — in a chaotic match that produced three red cards: South Africa's Sphephelo Sithole (49') and Themba Zwane (82'), and Mexico captain César Montes (90+1'). Quiñones took the Player of the Match award. In Guadalajara, South Korea came from behind to beat Czechia 2-1: Ladislav Krejčí headed Czechia ahead off a long Coufal throw (59') before Hwang In-beom equalised with a clever chip (67') and teed up Oh Hyeon-gyu's winner (80'). Today, June 12, the action shifts to the other two hosts: Canada open at home against Bosnia & Herzegovina at BMO Field in Toronto, and the USA begin their campaign against Paraguay at Los Angeles Stadium."},
-    {date:"2026-06-11",tag:"Matchday",title:"It begins! Mexico vs South Africa opens World Cup 2026 at the Azteca",body:"The 23rd FIFA World Cup kicks off today at 22:00 Athens time (19:00 GMT) at the legendary Estadio Ciudad de México. South Korea face Czechia in Guadalajara in the night game (05:00). 48 teams, 104 matches, 39 days — let the games begin."},
-    {date:"2026-06-10",tag:"Squads",title:"All 48 final squads locked in — Neymar makes Brazil's 26",body:"Carlo Ancelotti included the 34-year-old record scorer while leaving out João Pedro, Richarlison and Gabriel Jesus. Brentford's Igor Thiago and Bournemouth's Rayan earn first-time call-ups. Squad lists in this app are marked provisional until cross-checked with FIFA's official lists."},
-    {date:"2026-06-11",tag:"Preview",title:"Bookmakers' favourites: Spain ahead of France and England",body:"Spain (+450) lead the betting, followed by France (+500), England (+700), Portugal (+800), Brazil (+850) and holders Argentina (+1000), per FanDuel odds published on the eve of the tournament."},
-    {date:"2026-03-31",tag:"Qualifying",title:"Final six confirmed: Bosnia, Sweden, Türkiye, Czechia, DR Congo & Iraq",body:"Bosnia stunned Italy on penalties in Zenica — Italy miss a third straight World Cup. Gyökeres' 88th-minute winner sent Sweden through, Czechia beat Denmark on penalties, and DR Congo returned after 52 years by beating Jamaica. Iraq edged Bolivia for their first World Cup since 1986."},
-    {date:"2026-06-09",tag:"Venues",title:"FIFA confirms tournament stadium names and capacities",body:"Sponsored names are replaced for the tournament: MetLife becomes New York New Jersey Stadium, SoFi becomes Los Angeles Stadium, Estadio Akron becomes Estadio Guadalajara. Dallas Stadium is the largest venue at ~93,000."}
+    {date:"2026-06-12",tag:"Recap",title:"Day 1 Recap: Mexico cruise past nine-man South Africa; Korea rally to sink Czechia",body:"Day 1 delivered drama at both ends. At a packed Estadio Azteca, co-hosts Mexico beat South Africa 2-0 — Julián Quiñones lashed home the first goal of the tournament (9') and Raúl Jiménez headed a second (67') for an emotional first-ever World Cup goal — in a chaotic match that produced three red cards: South Africa's Sphephelo Sithole (49') and Themba Zwane (82'), and Mexico captain César Montes (90+1'). Quiñones took the Player of the Match award. In Guadalajara, South Korea came from behind to beat Czechia 2-1: Ladislav Krejčí headed Czechia ahead off a long Coufal throw (59') before Hwang In-beom equalised with a clever chip (67') and teed up Oh Hyeon-gyu's winner (80'). Today, June 12, the action shifts to the other two hosts: Canada open at home against Bosnia & Herzegovina at BMO Field in Toronto, and the USA begin their campaign against Paraguay at Los Angeles Stadium.",titleEl:"Ημέρα 1: Άνετο Μεξικό κόντρα στη 9αρι Ν. Αφρική — ανατροπή της Ν. Κορέας επί της Τσεχίας",bodyEl:"Η πρεμιέρα είχε δράμα. Στο κατάμεστο Εστάδιο Ατζτέκα, το Μεξικό νίκησε 2-0 τη Νότια Αφρική: ο Χουλιάν Κινιόνες σημείωσε το πρώτο γκολ της διοργάνωσης (9') και ο Ραούλ Χιμένες πρόσθεσε δεύτερο με κεφαλιά (67'), σε ματς-χάος με τρεις κόκκινες — Σιτόλε (49') και Ζουάνε (82') για τη Ν. Αφρική, Μόντες (90+1') για το Μεξικό. MVP ο Κινιόνες. Στη Γκουαδαλαχάρα, η Ν. Κορέα γύρισε το 0-1 σε 2-1: ο Κρέιτσι άνοιξε το σκορ (59'), ο Χουάνγκ Ιν-μπέομ ισοφάρισε (67') και σέρβιρε το νικητήριο γκολ στον Ο Χιον-γκιου (80'). Σήμερα 12/6: Καναδάς–Βοσνία στο Τορόντο και ΗΠΑ–Παραγουάη στο Λος Άντζελες."},
+    {date:"2026-06-11",tag:"Matchday",title:"It begins! Mexico vs South Africa opens World Cup 2026 at the Azteca",body:"The 23rd FIFA World Cup kicks off today at 22:00 Athens time (19:00 GMT) at the legendary Estadio Ciudad de México. South Korea face Czechia in Guadalajara in the night game (05:00). 48 teams, 104 matches, 39 days — let the games begin.",titleEl:"Σέντρα! Μεξικό – Νότια Αφρική ανοίγουν το Μουντιάλ 2026 στο Ατζτέκα",bodyEl:"Το 23ο Παγκόσμιο Κύπελλο ξεκινά στις 22:00 ώρα Ελλάδας στο θρυλικό Εστάδιο Ατζτέκα. Νότια Κορέα – Τσεχία στη Γκουαδαλαχάρα στο νυχτερινό (05:00). 48 ομάδες, 104 αγώνες, 39 ημέρες — ας μιλήσει η μπάλα."},
+    {date:"2026-06-10",tag:"Squads",title:"All 48 final squads locked in — Neymar makes Brazil's 26",body:"Carlo Ancelotti included the 34-year-old record scorer while leaving out João Pedro, Richarlison and Gabriel Jesus. Brentford's Igor Thiago and Bournemouth's Rayan earn first-time call-ups. Squad lists in this app are marked provisional until cross-checked with FIFA's official lists.",titleEl:"Κλείδωσαν και τα 48 ρόστερ — ο Νεϊμάρ στην 26άδα της Βραζιλίας",bodyEl:"Ο Κάρλο Αντσελότι συμπεριέλαβε τον 34χρονο πρώτο σκόρερ όλων των εποχών, αφήνοντας εκτός Ζοάο Πέδρο, Ρισάρλισον και Γκαμπριέλ Ζεσούς. Πρώτη κλήση για Ίγκορ Τιάγκο (Μπρέντφορντ) και Ραγιάν (Μπόρνμουθ). Τα ρόστερ στην εφαρμογή είναι προσωρινά μέχρι τη διασταύρωση με τις επίσημες λίστες της FIFA."},
+    {date:"2026-06-11",tag:"Preview",title:"Bookmakers' favourites: Spain ahead of France and England",body:"Spain (+450) lead the betting, followed by France (+500), England (+700), Portugal (+800), Brazil (+850) and holders Argentina (+1000), per FanDuel odds published on the eve of the tournament.",titleEl:"Φαβορί των στοιχηματικών η Ισπανία, μπροστά από Γαλλία και Αγγλία",bodyEl:"Ισπανία (+450), Γαλλία (+500), Αγγλία (+700), Πορτογαλία (+800), Βραζιλία (+850) και η κάτοχος Αργεντινή (+1000), σύμφωνα με τις αποδόσεις της FanDuel την παραμονή της πρεμιέρας."},
+    {date:"2026-03-31",tag:"Qualifying",title:"Final six confirmed: Bosnia, Sweden, Türkiye, Czechia, DR Congo & Iraq",body:"Bosnia stunned Italy on penalties in Zenica — Italy miss a third straight World Cup. Gyökeres' 88th-minute winner sent Sweden through, Czechia beat Denmark on penalties, and DR Congo returned after 52 years by beating Jamaica. Iraq edged Bolivia for their first World Cup since 1986.",titleEl:"Οι τελευταίοι έξι: Βοσνία, Σουηδία, Τουρκία, Τσεχία, ΛΔ Κονγκό & Ιράκ",bodyEl:"Η Βοσνία απέκλεισε την Ιταλία στα πέναλτι στη Ζένιτσα — τρίτο σερί χαμένο Μουντιάλ για τους Ιταλούς. Γκολ-πρόκριση του Γκιόκερες στο 88' για τη Σουηδία, η Τσεχία λύγισε τη Δανία στα πέναλτι, η ΛΔ Κονγκό επέστρεψε μετά από 52 χρόνια και το Ιράκ νίκησε τη Βολιβία."},
+    {date:"2026-06-09",tag:"Venues",title:"FIFA confirms tournament stadium names and capacities",body:"Sponsored names are replaced for the tournament: MetLife becomes New York New Jersey Stadium, SoFi becomes Los Angeles Stadium, Estadio Akron becomes Estadio Guadalajara. Dallas Stadium is the largest venue at ~93,000.",titleEl:"Η FIFA επιβεβαίωσε ονόματα γηπέδων και χωρητικότητες",bodyEl:"Τα εμπορικά ονόματα αλλάζουν για τη διοργάνωση: το MetLife γίνεται New York New Jersey Stadium, το SoFi γίνεται Los Angeles Stadium, το Εστάδιο Ακρόν γίνεται Estadio Guadalajara. Μεγαλύτερο γήπεδο το Dallas Stadium με ~93.000 θέσεις."}
   ],
 
   changelog:[
+    "2026-06-12 11:00 — V2 pack: Team Comparison tool (ranking, form, schedule, all-time WC head-to-head), redesigned bilingual News with featured story, mobile bottom navigation bar, fixed Greek menu overflow, fuller Greek translation coverage.",
     "2026-06-11 08:00 — App launched: full 104-match schedule, 12 groups, bracket, 16 stadiums, 48 team profiles, provisional squads for 16 contenders.",
     "2026-06-11 08:00 — Standings initialised at zero; stats tables will populate after Matchday 1.",
     "2026-06-11 17:55 — Daily update check: no matches played yet (opener Mexico vs South Africa kicks off tonight 22:00 Athens time). First results sync expected tomorrow 08:00.",
@@ -1122,8 +1167,14 @@ let zoom = 1;
 const LANG = store.get("lang","en");
 const LOC = LANG==="el" ? "el-GR" : "en-GB";
 const TT = LANG==="el"
-  ? {group:"Όμιλος",today:"ΣΗΜΕΡΑ",winner:"Νικητής Ομίλου",runner:"2ος Ομίλου",third:"3ος",winM:"Νικητής",loseM:"Ηττημένος",noToday:"Δεν υπάρχουν αγώνες σήμερα.",played:"έγιναν"}
-  : {group:"Group",today:"TODAY",winner:"Winner Group",runner:"Runner-up Group",third:"3rd place",winM:"Winner",loseM:"Loser",noToday:"No matches today.",played:"played"};
+  ? {group:"Όμιλος",today:"ΣΗΜΕΡΑ",winner:"Νικητής Ομίλου",runner:"2ος Ομίλου",third:"3ος",winM:"Νικητής",loseM:"Ηττημένος",noToday:"Δεν υπάρχουν αγώνες σήμερα.",played:"έγιναν",
+     savePred:"Αποθήκευση προβλέψεων",saveBch:"Αποθήκευση bracket",champ:"Ο πρωταθλητής σου 🏆",finalist:"Φιναλίστ 🥈",boot:"Χρυσό Παπούτσι ⚽",again:"Παίξε ξανά",qLbl:"Ερώτηση",scoreLbl:"Σκορ",
+     hHist:"Ιστορία στο Μουντιάλ",hSched:"Πρόγραμμα",hSquad:"Ρόστερ",backTeams:"Όλες οι ομάδες",backStads:"Όλα τα στάδια",hEvents:"Γεγονότα",hStats:"Στατιστικά αγώνα",hLineups:"Αρχικές ενδεκάδες",
+     hPred:"Η πρόβλεψή σου",motm:"MVP Αγώνα:",noData:"Δεν υπάρχουν δεδομένα ακόμη — ενημερώνεται μετά την 1η αγωνιστική.",nextM:"Επόμενο ματς:",yourTeam:"Η ομάδα σου",setFav:"Κάν' τη αγαπημένη",updated:"Τελευταία ενημέρωση:"}
+  : {group:"Group",today:"TODAY",winner:"Winner Group",runner:"Runner-up Group",third:"3rd place",winM:"Winner",loseM:"Loser",noToday:"No matches today.",played:"played",
+     savePred:"Save predictions",saveBch:"Save my bracket",champ:"Your champion 🏆",finalist:"Beaten finalist 🥈",boot:"Golden Boot winner ⚽",again:"Play again",qLbl:"Question",scoreLbl:"Score",
+     hHist:"World Cup history",hSched:"Schedule",hSquad:"Squad",backTeams:"All teams",backStads:"All stadiums",hEvents:"Events",hStats:"Match stats",hLineups:"Starting lineups",
+     hPred:"Your prediction",motm:"Man of the Match:",noData:"No data yet — updates after Matchday 1.",nextM:"Next match:",yourTeam:"Your team",setFav:"Set as favorite",updated:"Last updated:"};
 document.documentElement.lang = LANG;
 
 /* ---------- helpers ---------- */
@@ -1237,7 +1288,7 @@ function renderCountdown(){
   if(live.length){ const m=live[0]; lEl.innerHTML=`<span class="live-dot"></span> <b>LIVE NOW:</b> ${esc(phLabel(m.home))} vs ${esc(phLabel(m.away))} — ${esc(stadium(m.stadium).fifaName)}`; }
   if(!nm){ cEl.innerHTML=""; if(!live.length) lEl.innerHTML="The tournament has concluded — thanks for following!"; return; }
   target=nm.utc.getTime();
-  if(!live.length) lEl.innerHTML=`Next match: <b>${esc(phLabel(nm.home))} vs ${esc(phLabel(nm.away))}</b> · ${esc(fmtFull(nm.utc))} · ${esc(stadium(nm.stadium).fifaName)}`;
+  if(!live.length) lEl.innerHTML=`${TT.nextM} <b>${esc(phLabel(nm.home))} vs ${esc(phLabel(nm.away))}</b> · ${esc(fmtFull(nm.utc))} · ${esc(stadium(nm.stadium).fifaName)}`;
   function tick(){
     let s=Math.max(0,Math.floor((target-Date.now())/1000));
     const d=Math.floor(s/86400); s-=d*86400; const h=Math.floor(s/3600); s-=h*3600; const mi=Math.floor(s/60); const se=s-mi*60;
@@ -1368,7 +1419,7 @@ function showTeam(code){
   const posOrder={GK:0,DF:1,MF:2,FW:3};
   const sq=[...squad].sort((a,b)=>posOrder[a[2]]-posOrder[b[2]]||a[0]-b[0]);
   $("#teamDetail").innerHTML=`
-    <button class="back-link" id="teamBack"><i class="fa-solid fa-arrow-left"></i> All teams</button>
+    <button class="back-link" id="teamBack"><i class="fa-solid fa-arrow-left"></i> ${TT.backTeams}</button>
     <div class="tdetail-head">${flagImg(code,"flag xl")}
       <div><h2>${esc(t.name)}</h2>
         <div class="facts">
@@ -1377,11 +1428,11 @@ function showTeam(code){
           <span class="badge grey">${t.confed}</span>
           <span class="badge grey"><i class="fa-solid fa-user-tie"></i> ${esc(t.coach)}</span>
         </div></div>
-      <button class="btn ${FAV===code?"gold":"ghost"}" data-fav="${code}" style="margin-left:auto"><i class="fa-solid fa-star"></i> ${FAV===code?"Your team":"Set as favorite"}</button>
+      <button class="btn ${FAV===code?"gold":"ghost"}" data-fav="${code}" style="margin-left:auto"><i class="fa-solid fa-star"></i> ${FAV===code?TT.yourTeam:TT.setFav}</button>
     </div>
-    <div class="panel"><h3><i class="fa-solid fa-book-open"></i> World Cup history</h3><p style="font-size:.9rem;color:var(--muted)">${esc(t.history)}</p></div>
-    <div class="panel"><h3><i class="fa-regular fa-calendar"></i> Schedule</h3><div class="match-grid">${tm.map(matchCard).join("")}</div></div>
-    <div class="panel"><h3><i class="fa-solid fa-shirt"></i> Squad ${squad.length?`<span class="badge gold" style="margin-left:.5em">provisional</span>`:""}</h3>
+    <div class="panel"><h3><i class="fa-solid fa-book-open"></i> ${TT.hHist}</h3><p style="font-size:.9rem;color:var(--muted)">${esc(t.history)}</p></div>
+    <div class="panel"><h3><i class="fa-regular fa-calendar"></i> ${TT.hSched}</h3><div class="match-grid">${tm.map(matchCard).join("")}</div></div>
+    <div class="panel"><h3><i class="fa-solid fa-shirt"></i> ${TT.hSquad} ${squad.length?`<span class="badge gold" style="margin-left:.5em">provisional</span>`:""}</h3>
     ${squad.length?`<p style="font-size:.74rem;color:var(--muted);margin-bottom:.7rem">26-man list based on pre-tournament reporting — reconciled with the official FIFA list in the daily update.</p>
       <div style="overflow-x:auto"><table class="data"><thead><tr><th>#</th><th>Player</th><th>Pos</th><th>Club</th><th>Age</th></tr></thead><tbody>
       ${sq.map(p=>`<tr><td><b>${p[0]}</b></td><td>${esc(p[1])}</td><td><span class="pos-pill pos-${p[2]}">${p[2]}</span></td><td>${esc(p[3])}</td><td>${p[4]}</td></tr>`).join("")}
@@ -1414,7 +1465,7 @@ function showStadium(id){
   $("#stadIndex").classList.add("hidden"); $("#stadDetail").classList.remove("hidden");
   const ms=M.filter(m=>m.stadium===id).sort((a,b)=>a.utc-b.utc);
   $("#stadDetail").innerHTML=`
-    <button class="back-link" id="stadBack"><i class="fa-solid fa-arrow-left"></i> All stadiums</button>
+    <button class="back-link" id="stadBack"><i class="fa-solid fa-arrow-left"></i> ${TT.backStads}</button>
     <div class="panel">
       <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap">
         <div style="width:84px;height:84px;border-radius:18px;background:${STAD_GRADS[s.country]};display:flex;align-items:center;justify-content:center;font-size:2rem;color:#fff"><i class="fa-solid ${s.icon}"></i></div>
@@ -1443,7 +1494,7 @@ function liveCard(m){
     (r.subs||[]).forEach(s=>rows.push({min:s.min,html:`<i class="fa-solid fa-right-left" style="color:var(--blue2)"></i> ${esc(s.on)} <span style="color:var(--muted)">for ${esc(s.off)}</span>`}));
     rows.sort((a,b)=>a.min-b.min);
     evts=rows.map(r2=>`<div class="event-row"><span class="min">${r2.min}'</span><span>${r2.html}</span></div>`).join("");
-    if(r.motm) evts+=`<div class="event-row"><span class="min">⭐</span><span><b>Man of the Match:</b> ${esc(r.motm)}</span></div>`;
+    if(r.motm) evts+=`<div class="event-row"><span class="min">⭐</span><span><b>${TT.motm}</b> ${esc(r.motm)}</span></div>`;
   }
   return matchCard(m)+(evts?`<div class="panel" style="margin-top:-.4rem;border-top-left-radius:0;border-top-right-radius:0">${evts}</div>`:"");
 }
@@ -1454,7 +1505,7 @@ function renderLive(){
   const done=M.filter(m=>res(m.id)&&res(m.id).score).sort((a,b)=>b.utc-a.utc).slice(0,9);
   $("#recentResults").innerHTML= done.length? done.map(m=>`<div>${liveCard(m)}</div>`).join("") :
     `<div class="live-empty" style="grid-column:1/-1"><i class="fa-solid fa-hourglass-start"></i> No completed matches yet — the opener kicks off June 11 at ${fmtTime(M[0].utc)} (your time). Results will appear here after full time and in the daily 08:00 update.</div>`;
-  $("#liveUpdatedBadge").innerHTML=`<i class="fa-solid fa-clock"></i> Data updated: ${new Date(D.lastUpdated).toLocaleString(LOC,{timeZone:TZ,day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"})}`;
+  $("#liveUpdatedBadge").innerHTML=`<i class="fa-solid fa-clock"></i> ${TT.updated} ${new Date(D.lastUpdated).toLocaleString(LOC,{timeZone:TZ,day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"})}`;
 }
 
 /* ---------- stats ---------- */
@@ -1476,7 +1527,7 @@ function aggStats(){
           cs:Object.values(cs).sort((a,b)=>b.n-a.n),goalsFor,goalsAg};
 }
 function barList(items,valKey,max,gold){
-  if(!items.length) return `<div class="empty-note">No data yet — updates after Matchday 1.</div>`;
+  if(!items.length) return `<div class="empty-note">${TT.noData}</div>`;
   const mx=Math.max(...items.map(i=>i[valKey]),1);
   return items.slice(0,10).map((it,i)=>`<div class="bar-row"><span style="color:var(--muted);font-weight:700">${i+1}</span>
     <div><div style="display:flex;justify-content:space-between;font-size:.84rem"><span>${isTeam(it.t)?flagImg(it.t,"flag sm"):""} <b>${esc(it.p||team(it.t)?.name||it.t)}</b> ${it.p&&isTeam(it.t)?`<span style="color:var(--muted)">· ${team(it.t).name}</span>`:""}</span></div>
@@ -1508,7 +1559,7 @@ function renderFav(){
   if(!FAV){ $("#favSummary").innerHTML=`<div class="empty-note">Pick a team to personalise the app — their matches get highlighted everywhere.</div>`; return; }
   const t=team(FAV); const nm=M.filter(m=>(m.home===FAV||m.away===FAV)&&m.utc.getTime()>Date.now()).sort((a,b)=>a.utc-b.utc)[0];
   $("#favSummary").innerHTML=`<div style="display:flex;align-items:center;gap:.8rem">${flagImg(FAV,"flag lg")}<div><b>${esc(t.name)}</b><div style="font-size:.78rem;color:var(--muted)">${TT.group} ${t.group} · FIFA #${t.rank} · Coach ${esc(t.coach)}</div></div></div>
-  ${nm?`<div style="margin-top:.8rem;font-size:.84rem">Next match: <b>${esc(phLabel(nm.home))} vs ${esc(phLabel(nm.away))}</b><br><span style="color:var(--muted)">${esc(fmtFull(nm.utc))} · ${esc(stadium(nm.stadium).fifaName)}</span></div>`:""}`;
+  ${nm?`<div style="margin-top:.8rem;font-size:.84rem">${TT.nextM} <b>${esc(phLabel(nm.home))} vs ${esc(phLabel(nm.away))}</b><br><span style="color:var(--muted)">${esc(fmtFull(nm.utc))} · ${esc(stadium(nm.stadium).fifaName)}</span></div>`:""}`;
 }
 function renderPredictor(){
   const preds=store.get("pred",{});
@@ -1521,7 +1572,7 @@ function renderPredictor(){
       <span style="text-align:center;color:var(--muted)">–</span>
       <input type="number" min="0" max="20" class="pa" value="${p[1]}" aria-label="away goals">
       <div style="display:flex;align-items:center;gap:.4rem;font-weight:600;font-size:.8rem">${flagImg(m.away,"flag sm")}<span>${esc(team(m.away).name)}</span></div>
-    </div>`;}).join("")+`<button class="btn gold" id="savePreds" style="margin-top:.6rem"><i class="fa-solid fa-floppy-disk"></i> Save predictions</button>`;
+    </div>`;}).join("")+`<button class="btn gold" id="savePreds" style="margin-top:.6rem"><i class="fa-solid fa-floppy-disk"></i> ${TT.savePred}</button>`;
   $("#savePreds").addEventListener("click",()=>{
     const preds2=store.get("pred",{});
     $$("#predictorList .predict-row").forEach(r=>{
@@ -1552,13 +1603,13 @@ function renderBracketChallenge(){
   const bc=store.get("bch",{});
   const tOpts=c=>Object.keys(D.teams).sort((a,b)=>team(a).name.localeCompare(team(b).name)).map(k=>`<option value="${k}" ${bc[c]===k?"selected":""}>${team(k).name}</option>`).join("");
   $("#bracketChallenge").innerHTML=`
-    <label style="font-size:.78rem;color:var(--muted)">Your champion 🏆</label>
+    <label style="font-size:.78rem;color:var(--muted)">${TT.champ}</label>
     <select class="fav-select" id="bcChamp"><option value="">—</option>${tOpts("champ")}</select>
-    <label style="font-size:.78rem;color:var(--muted);display:block;margin-top:.6rem">Beaten finalist 🥈</label>
+    <label style="font-size:.78rem;color:var(--muted);display:block;margin-top:.6rem">${TT.finalist}</label>
     <select class="fav-select" id="bcRunner"><option value="">—</option>${tOpts("runner")}</select>
-    <label style="font-size:.78rem;color:var(--muted);display:block;margin-top:.6rem">Golden Boot winner ⚽</label>
+    <label style="font-size:.78rem;color:var(--muted);display:block;margin-top:.6rem">${TT.boot}</label>
     <input type="text" class="fav-select" id="bcBoot" placeholder="e.g. Kylian Mbappé" value="${esc(bc.boot||"")}">
-    <button class="btn" id="bcSave" style="margin-top:.8rem"><i class="fa-solid fa-floppy-disk"></i> Save my bracket</button>
+    <button class="btn" id="bcSave" style="margin-top:.8rem"><i class="fa-solid fa-floppy-disk"></i> ${TT.saveBch}</button>
     <p style="font-size:.72rem;color:var(--muted);margin-top:.6rem"><i class="fa-solid fa-lock"></i> Per-round winner picks unlock when the Round-of-32 field is confirmed (June 28).</p>
     ${bc.champ?`<div style="margin-top:.7rem;font-size:.84rem">Your final: <b>${esc(team(bc.champ)?.name||"")}</b> beats <b>${esc(team(bc.runner)?.name||"?")}</b> at New York New Jersey Stadium.</div>`:""}`;
   $("#bcSave").addEventListener("click",()=>{
@@ -1573,10 +1624,10 @@ function renderQuiz(){
       <div style="font-size:2.4rem">${score>=11?"🏆":score>=7?"🥈":"⚽"}</div>
       <h3 style="font-family:var(--font-d)">${score} / ${D.quiz.length}</h3>
       <p style="color:var(--muted);font-size:.86rem">${score>=11?"World-class! You know your World Cup.":score>=7?"Solid squad player.":"Time to rewatch some classics…"}</p>
-      <button class="btn gold" id="quizAgain" style="margin-top:.8rem"><i class="fa-solid fa-rotate-left"></i> Play again</button></div>`;
+      <button class="btn gold" id="quizAgain" style="margin-top:.8rem"><i class="fa-solid fa-rotate-left"></i> ${TT.again}</button></div>`;
       $("#quizAgain").addEventListener("click",()=>{i=0;score=0;q();}); return; }
     const Q=D.quiz[i];
-    box.innerHTML=`<div class="quiz-q"><div style="display:flex;justify-content:space-between;color:var(--muted);font-size:.72rem;margin-bottom:.4rem"><span>Question ${i+1}/${D.quiz.length}</span><span>Score ${score}</span></div>
+    box.innerHTML=`<div class="quiz-q"><div style="display:flex;justify-content:space-between;color:var(--muted);font-size:.72rem;margin-bottom:.4rem"><span>${TT.qLbl} ${i+1}/${D.quiz.length}</span><span>${TT.scoreLbl} ${score}</span></div>
       <p>${esc(Q.q)}</p><div class="quiz-opts">${Q.o.map((o,j)=>`<button data-j="${j}">${esc(o)}</button>`).join("")}</div></div>`;
     $$("#quizBox .quiz-opts button").forEach(b=>b.addEventListener("click",()=>{
       const j=+b.dataset.j;
@@ -1590,14 +1641,22 @@ function renderQuiz(){
 
 /* ---------- news ---------- */
 function renderNews(){
-  $("#newsList").innerHTML=D.news.map(n=>`<div class="news-item">
-    <div class="nmeta"><span class="badge ${n.tag==="Matchday"?"gold":"blue"}">${esc(n.tag)}</span><span><i class="fa-regular fa-clock"></i> ${esc(n.date)}</span></div>
-    <h3>${esc(n.title)}</h3><p>${esc(n.body)}</p></div>`).join("");
+  const tagIcon={Matchday:"fa-futbol",Recap:"fa-flag-checkered",Squads:"fa-shirt",Preview:"fa-binoculars",Qualifying:"fa-ticket",Venues:"fa-landmark",Press:"fa-newspaper"};
+  const tagCls={Matchday:"gold",Recap:"gold",Squads:"blue",Qualifying:"green",Preview:"grey",Venues:"grey",Press:"blue"};
+  const dstr=d=>{try{return new Intl.DateTimeFormat(LOC,{day:"numeric",month:"short"}).format(new Date(d+"T12:00:00"));}catch(e){return d;}};
+  $("#newsList").innerHTML=D.news.map((n,i)=>{
+    const t=(LANG==="el"&&n.titleEl)?n.titleEl:n.title;
+    const b=(LANG==="el"&&n.bodyEl)?n.bodyEl:n.body;
+    const ic=tagIcon[n.tag]||"fa-circle-info", tc=tagCls[n.tag]||"blue";
+    return `<div class="news-item ${i===0?"featured":""}">
+      <div class="nmeta"><span class="badge ${tc}"><i class="fa-solid ${ic}"></i> ${esc(n.tag)}</span><span><i class="fa-regular fa-clock"></i> ${dstr(n.date)}</span></div>
+      <h3>${esc(t)}</h3><p>${esc(b)}</p></div>`;
+  }).join("");
   $("#changelog").innerHTML=D.changelog.map(c=>`<li style="padding:.3em 0"><i class="fa-solid fa-check" style="color:var(--green);margin-right:.5em"></i>${esc(c)}</li>`).join("");
   const upd=new Date(D.lastUpdated).toLocaleString(LOC,{timeZone:TZ,day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"});
-  $("#newsUpdatedBadge").innerHTML=`<i class="fa-solid fa-clock"></i> Last updated: ${upd}`;
-  $("#footerUpdated").textContent="Data last updated: "+upd;
-  $("#footerUpdated2").textContent="Data: "+upd;
+  $("#newsUpdatedBadge").innerHTML=`<i class="fa-solid fa-clock"></i> ${TT.updated} ${upd}`;
+  $("#footerUpdated").textContent=(LANG==="el"?"Τελευταία ενημέρωση δεδομένων: ":"Data last updated: ")+upd;
+  $("#footerUpdated2").textContent=(LANG==="el"?"Δεδομένα: ":"Data: ")+upd;
 }
 
 /* ---------- match modal ---------- */
@@ -1619,16 +1678,16 @@ function openMatch(id){
     (r.cards||[]).forEach(c=>evts.push({min:c.min,h:`<span class="card-${c.type==="R"?"red":"yellow"}"></span> ${esc(c.player)} (${esc(phLabel(c.team))})`}));
     (r.subs||[]).forEach(s=>evts.push({min:s.min,h:`<i class="fa-solid fa-right-left" style="color:var(--blue2)"></i> ${esc(s.on)} ⇄ ${esc(s.off)}`}));
     evts.sort((a,b)=>a.min-b.min);
-    if(evts.length) body+=`<h4 style="margin:.9rem 0 .4rem;font-size:.86rem"><i class="fa-solid fa-timeline" style="color:var(--gold)"></i> Events</h4>`+evts.map(e=>`<div class="event-row"><span class="min">${e.min}'</span><span>${e.h}</span></div>`).join("");
-    if(r.motm) body+=`<p style="margin-top:.7rem;font-size:.86rem">⭐ <b>Man of the Match:</b> ${esc(r.motm)}</p>`;
+    if(evts.length) body+=`<h4 style="margin:.9rem 0 .4rem;font-size:.86rem"><i class="fa-solid fa-timeline" style="color:var(--gold)"></i> ${TT.hEvents}</h4>`+evts.map(e=>`<div class="event-row"><span class="min">${e.min}'</span><span>${e.h}</span></div>`).join("");
+    if(r.motm) body+=`<p style="margin-top:.7rem;font-size:.86rem">⭐ <b>${TT.motm}</b> ${esc(r.motm)}</p>`;
     if(r.stats){
       const S=r.stats, row=(lbl,k,suffix="")=>S[k]?`<div class="stat-cmp"><div class="lbl"><span>${S[k][0]}${suffix}</span><b>${lbl}</b><span>${S[k][1]}${suffix}</span></div>
         <div class="dual"><i class="l" style="width:${S[k][0]/(S[k][0]+S[k][1]||1)*100}%"></i><i class="r" style="flex:1"></i></div></div>`:"";
-      body+=`<h4 style="margin:1rem 0 .4rem;font-size:.86rem"><i class="fa-solid fa-chart-bar" style="color:var(--gold)"></i> Match stats</h4>`
+      body+=`<h4 style="margin:1rem 0 .4rem;font-size:.86rem"><i class="fa-solid fa-chart-bar" style="color:var(--gold)"></i> ${TT.hStats}</h4>`
         +row("Possession","possession","%")+row("Shots","shots")+row("On target","onTarget")+row("Corners","corners");
     }
     if(r.lineups&&(r.lineups.home||[]).length){
-      body+=`<h4 style="margin:1rem 0 .4rem;font-size:.86rem"><i class="fa-solid fa-shirt" style="color:var(--gold)"></i> Starting lineups</h4>
+      body+=`<h4 style="margin:1rem 0 .4rem;font-size:.86rem"><i class="fa-solid fa-shirt" style="color:var(--gold)"></i> ${TT.hLineups}</h4>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;font-size:.78rem">
         <div><b>${esc(phLabel(m.home))}</b><br>${r.lineups.home.map(esc).join("<br>")}</div>
         <div style="text-align:right"><b>${esc(phLabel(m.away))}</b><br>${r.lineups.away.map(esc).join("<br>")}</div></div>`;
@@ -1638,7 +1697,7 @@ function openMatch(id){
     if(isTeam(m.home)&&isTeam(m.away)){
       const p=store.get("pred",{})[m.id];
       body+=`<div style="margin-top:1rem;text-align:center">
-        <h4 style="font-size:.86rem;margin-bottom:.5rem"><i class="fa-solid fa-wand-magic-sparkles" style="color:var(--gold)"></i> Your prediction</h4>
+        <h4 style="font-size:.86rem;margin-bottom:.5rem"><i class="fa-solid fa-wand-magic-sparkles" style="color:var(--gold)"></i> ${TT.hPred}</h4>
         <div style="display:inline-flex;gap:.5rem;align-items:center">
           <input id="mpH" type="number" min="0" max="20" value="${p?p[0]:""}" style="width:58px;padding:.5em;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:9px;color:var(--text);font-weight:800">
           <span>–</span>
@@ -2106,6 +2165,172 @@ function qcRender(){
 }
 $("#qcGroup").addEventListener("change",qcRender);
 qcRender();
+})();
+</script>
+<script>
+/* ════════ V2 PACK: Team Comparison · Mobile bottom nav · Extra Greek ════════ */
+(function(){
+"use strict";
+const $=q=>document.querySelector(q), $$=q=>[...document.querySelectorAll(q)];
+const D=TOURNAMENT_DATA;
+const get=(k,f)=>{try{const v=localStorage.getItem("wc26:"+k);return v==null?f:JSON.parse(v);}catch(e){return f;}};
+const LANG=get("lang","en"), EL=LANG==="el";
+const esc=x=>String(x).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const team=c=>D.teams[c];
+const t2=(en,el)=>EL?el:en;
+
+/* ───────── MOBILE BOTTOM NAV ───────── */
+const MAIN=[["home","fa-house",t2("Home","Αρχική")],["matches","fa-calendar-days",t2("Matches","Αγώνες")],["groups","fa-table-list",t2("Groups","Όμιλοι")],["live","fa-tower-broadcast","Live"]];
+const MORE=[["bracket","fa-sitemap",t2("Bracket","Δέντρο")],["teams","fa-users",t2("Teams","Ομάδες")],["stadiums","fa-landmark",t2("Stadiums","Στάδια")],["stats","fa-chart-simple","Stats"],["fan","fa-gamepad","Fan Zone"],["news","fa-newspaper",t2("News","Νέα")]];
+const mnav=document.createElement("nav"); mnav.id="mobileNav";
+mnav.innerHTML=MAIN.map(([p,ic,l])=>`<button data-mp="${p}"><i class="fa-solid ${ic}"></i>${esc(l)}</button>`).join("")
+  +`<button data-mp="__more"><i class="fa-solid fa-ellipsis"></i>${t2("More","Μενού")}</button>`;
+const sheet=document.createElement("div"); sheet.id="mobileSheet";
+sheet.innerHTML=MORE.map(([p,ic,l])=>`<button data-mp="${p}"><i class="fa-solid ${ic}"></i>${esc(l)}</button>`).join("");
+document.body.appendChild(sheet); document.body.appendChild(mnav);
+function setActive(p){
+  $$("#mobileNav button").forEach(b=>b.classList.toggle("active",b.dataset.mp===p||(b.dataset.mp==="__more"&&MORE.some(x=>x[0]===p))));
+}
+function goPage(p){ const b=$('#mainTabs button[data-page="'+p+'"]'); if(b)b.click(); setActive(p); sheet.classList.remove("open"); }
+mnav.addEventListener("click",e=>{ const b=e.target.closest("button"); if(!b)return;
+  if(b.dataset.mp==="__more"){ sheet.classList.toggle("open"); return; }
+  goPage(b.dataset.mp); });
+sheet.addEventListener("click",e=>{ const b=e.target.closest("button"); if(b) goPage(b.dataset.mp); });
+$("#mainTabs").addEventListener("click",e=>{ const b=e.target.closest("button"); if(b) setActive(b.dataset.page); });
+document.addEventListener("click",e=>{ if(!e.target.closest("#mobileSheet")&&!e.target.closest("#mobileNav")) sheet.classList.remove("open"); });
+setActive("home");
+
+/* ───────── EXTRA GREEK (static panels) ───────── */
+function setKeepIcon(el,txt){ if(!el)return; const i=el.querySelector("i"); el.innerHTML=(i?i.outerHTML+" ":"")+esc(txt); }
+if(EL){
+  const liveH=$$("#page-live h3");
+  if(liveH[0]) liveH[0].innerHTML='<span class="live-dot"></span>Σήμερα σε εξέλιξη';
+  if(liveH[1]) liveH[1].innerHTML='<i class="fa-solid fa-clock-rotate-left" style="color:var(--gold)"></i> Τελευταία Αποτελέσματα';
+  const statH=$$("#page-stats .stats-grid .panel > h3");
+  const statTxt=["Πρώτοι Σκόρερ — Χρυσό Παπούτσι","Ασίστ","Κάρτες","Ανέπαφες Εστίες (GK)","Στατιστικά Ομάδων","Ιστορία Μουντιάλ"];
+  statH.forEach((h,i)=>{ if(statTxt[i]) setKeepIcon(h,statTxt[i]); });
+  const fanH=$$("#page-fan .panel > h3");
+  const fanTxt=["Η Ομάδα μου","Προγνωστικά Αγώνων","Ποιος θα το σηκώσει; — Ψηφοφορία","Πρόκληση Bracket","Κουίζ Μουντιάλ"];
+  fanH.forEach((h,i)=>{ if(fanTxt[i]) setKeepIcon(h,fanTxt[i]); });
+  const fanP=$$("#page-fan .panel > p");
+  if(fanP[0]) fanP[0].textContent="Προέβλεψε το σκορ των επόμενων αγώνων. Οι επιλογές σου αποθηκεύονται σε αυτή τη συσκευή.";
+  if(fanP[1]) fanP[1].textContent="Διάλεξε τη διαδρομή του πρωταθλητή — ποιος σηκώνει την κούπα στις 19 Ιουλίου;";
+  const chl=$("#changelog"); if(chl){ const h=chl.closest(".panel").querySelector("h3"); setKeepIcon(h,"Τι νέο υπάρχει"); }
+  const setH=$$("#settingsModalBg .mbody h3");
+  if(setH[0]) setKeepIcon(setH[0],"Ζώνη ώρας");
+  if(setH[1]) setKeepIcon(setH[1],"Αυτόματη ανανέωση live (προαιρετικό)");
+  setKeepIcon($("#apiSave"),"Αποθήκευση"); setKeepIcon($("#apiTest"),"Δοκιμή σύνδεσης"); const ac=$("#apiClear"); if(ac)ac.textContent="Αφαίρεση κλειδιού";
+  const stH=$("#settingsModalBg .mhead h3"); if(stH) setKeepIcon(stH,"Ρυθμίσεις");
+}
+
+/* ───────── TEAM COMPARISON ───────── */
+const cmp=document.createElement("div");
+cmp.className="panel"; cmp.id="cmpPanel"; cmp.style.marginBottom="1.2rem";
+const tOpts=Object.keys(D.teams).sort((a,b)=>team(a).name.localeCompare(team(b).name)).map(c=>`<option value="${c}">${esc(team(c).name)}</option>`).join("");
+cmp.innerHTML=`<h3><i class="fa-solid fa-scale-balanced" style="color:var(--gold)"></i> ${t2("Compare Teams","Σύγκριση Ομάδων")}</h3>
+  <div class="filters" style="margin-bottom:.6rem">
+    <select id="cmpA"><option value="">${t2("— Team A —","— Ομάδα Α —")}</option>${tOpts}</select>
+    <span style="color:var(--muted);font-weight:800">VS</span>
+    <select id="cmpB"><option value="">${t2("— Team B —","— Ομάδα Β —")}</option>${tOpts}</select>
+    <button class="btn" id="cmpGo"><i class="fa-solid fa-scale-balanced"></i> ${t2("Compare","Σύγκριση")}</button>
+  </div>
+  <div id="cmpOut"></div>`;
+const ti=$("#teamsIndex"); ti.insertBefore(cmp, ti.querySelector(".filters"));
+
+function results(){ return D.results.filter(r=>r.score&&["FT","AET","PEN"].includes(r.status)); }
+function teamForm(c){
+  const out=[];
+  results().forEach(r=>{
+    const mm=D.matches.find(x=>x[0]===r.id); if(!mm)return;
+    const [id,dt,st,g,h,a]=mm;
+    if(h!==c&&a!==c)return;
+    const me=h===c?0:1, opp=me?0:1;
+    out.push({dt,res:r.score[me]>r.score[opp]?"W":r.score[me]<r.score[opp]?"L":"D"});
+  });
+  return out.sort((x,y)=>x.dt<y.dt?-1:1).map(o=>o.res);
+}
+function groupPos(c){
+  const g=team(c).group, codes=D.groups[g];
+  const pts={}; codes.forEach(x=>pts[x]=0); const gd={}; codes.forEach(x=>gd[x]=0);
+  results().forEach(r=>{
+    const mm=D.matches.find(x=>x[0]===r.id); if(!mm||mm[2]!=="G"||mm[3]!==g)return;
+    const [id,dt,st,gg,h,a]=mm, [hs,as]=r.score;
+    gd[h]+=hs-as; gd[a]+=as-hs;
+    if(hs>as)pts[h]+=3; else if(hs<as)pts[a]+=3; else {pts[h]++;pts[a]++;}
+  });
+  const order=[...codes].sort((x,y)=>pts[y]-pts[x]||gd[y]-gd[x]);
+  return {pos:order.indexOf(c)+1, pts:pts[c]};
+}
+function nextFix(c){
+  return D.matches.filter(m=>(m[4]===c||m[5]===c)&&new Date(m[1]).getTime()>Date.now()).sort((a,b)=>a[1]<b[1]?-1:1)[0];
+}
+function formHtml(c){
+  const f=teamForm(c);
+  if(!f.length) return `<span style="color:var(--muted)">${t2("No matches yet","Κανένα ματς ακόμη")}</span>`;
+  const col={W:"var(--green)",D:"var(--yellow)",L:"var(--red)"};
+  return f.slice(-5).map(r=>`<span style="display:inline-flex;width:22px;height:22px;border-radius:50%;background:${col[r]};color:#0d0d1a;font-size:.66rem;font-weight:900;align-items:center;justify-content:center;margin-right:.25em">${EL?({W:"Ν",D:"Ι",L:"Η"})[r]:r}</span>`).join("");
+}
+function sideCol(c){
+  const t=team(c), gp=groupPos(c), nf=nextFix(c);
+  const nfTxt=nf?`${esc(team(nf[4])?team(nf[4]).name:nf[4])} – ${esc(team(nf[5])?team(nf[5]).name:nf[5])}`:t2("Group stage complete","Ολοκλήρωσε τους ομίλους");
+  return `<div style="text-align:center">
+    <img class="flag xl" src="https://flagcdn.com/w80/${t.flag}.png" alt="" style="margin:0 auto .5rem">
+    <h3 style="font-family:var(--font-d)">${esc(t.name)}</h3>
+    <div style="display:flex;gap:.4rem;justify-content:center;flex-wrap:wrap;margin:.5rem 0">
+      <span class="badge gold">FIFA #${t.rank}</span><span class="badge blue">${t.confed}</span>
+      <span class="badge grey">${t2("Group","Όμιλος")} ${t.group} · ${gp.pos}${EL?"ος":["st","nd","rd"][gp.pos-1]||"th"} · ${gp.pts} ${t2("pts","β.")}</span>
+    </div>
+    <div style="font-size:.78rem;color:var(--muted)">${t2("Coach","Προπονητής")}: <b style="color:var(--text)">${esc(t.coach)}</b></div>
+    <div style="margin:.55rem 0">${formHtml(c)}</div>
+    <div style="font-size:.74rem;color:var(--muted)">${t2("Next","Επόμενο")}: ${nfTxt}</div>
+    <div style="margin-top:.55rem;font-size:.76rem">${(t.squad||[]).length?`${t.squad.length} ${t2("players","παίκτες")} · `:""}<button class="chip" data-team="${c}">${t2("Full profile →","Πλήρες προφίλ →")}</button></div>
+  </div>`;
+}
+/* archive H2H */
+const YEARS=[2022,2018,2014,2010,2006,2002,1998,1994,1990,1986,1982,1978,1974,1970,1966,1962,1958,1954,1950,1938,1934,1930];
+const arch={};
+const ALT={"United States":["USA","United States"],"South Korea":["South Korea","Korea Republic"],"Czechia":["Czechia","Czech Republic","Czechoslovakia"],"Germany":["Germany","West Germany"],"Netherlands":["Netherlands","Holland"],"DR Congo":["DR Congo","Congo DR","Zaire"],"Türkiye":["Türkiye","Turkey"],"Iran":["Iran","IR Iran"],"Ivory Coast":["Ivory Coast","Côte d'Ivoire"],"Bosnia & Herzegovina":["Bosnia and Herzegovina","Bosnia-Herzegovina"]};
+const keysFor=c=>ALT[team(c).name]||[team(c).name];
+const hit=(name,keys)=>name&&keys.some(k=>name.toLowerCase().includes(k.toLowerCase()));
+function ss(sc){ if(!sc||!sc.ft)return "–"; let o=(sc.et||sc.ft)[0]+"–"+(sc.et||sc.ft)[1]; if(sc.p)o+=" ("+sc.p[0]+"–"+sc.p[1]+"p)"; return o; }
+async function h2h(a,b,box){
+  const ka=keysFor(a), kb=keysFor(b);
+  const all=[];
+  for(let i=0;i<YEARS.length;i++){
+    box.innerHTML=`<div class="empty-note">${t2("Searching the archives…","Σάρωση αρχείων…")} ${i+1}/22</div>`;
+    try{
+      if(!arch[YEARS[i]]){ const r=await fetch(`https://raw.githubusercontent.com/openfootball/worldcup.json/master/${YEARS[i]}/worldcup.json`,{cache:"force-cache"}); arch[YEARS[i]]=r.ok?await r.json():{matches:[]}; }
+      (arch[YEARS[i]].matches||[]).forEach(m=>all.push(Object.assign({year:YEARS[i]},m)));
+    }catch(e){}
+  }
+  const hits=all.filter(m=>(hit(m.team1,ka)&&hit(m.team2,kb))||(hit(m.team1,kb)&&hit(m.team2,ka)));
+  if(!hits.length){ box.innerHTML=`<div class="empty-note">${t2("These teams have never met at a World Cup (1930–2022).","Οι δύο ομάδες δεν έχουν συναντηθεί ποτέ σε Μουντιάλ (1930–2022).")}</div>`; return; }
+  let wa=0,wb=0,dr=0;
+  hits.forEach(m=>{ if(!m.score||!m.score.ft){dr++;return;}
+    const sc=m.score.p||m.score.et||m.score.ft;
+    if(sc[0]===sc[1]){dr++;return;}
+    const aIs1=hit(m.team1,ka);
+    if((sc[0]>sc[1])===aIs1)wa++; else wb++; });
+  box.innerHTML=`<div style="display:flex;gap:.45rem;flex-wrap:wrap;justify-content:center;margin:.4rem 0 .7rem">
+      <span class="badge gold">${hits.length} ${t2("WC meetings","αναμετρήσεις σε Μουντιάλ")}</span>
+      <span class="badge green">${esc(team(a).name)}: ${wa}</span>
+      <span class="badge blue">${esc(team(b).name)}: ${wb}</span>
+      <span class="badge grey">${t2("Draws","Ισοπαλίες")}: ${dr}</span></div>
+    <table class="data"><tbody>${hits.map(m=>`<tr>
+      <td style="width:54px;font-weight:800;color:var(--gold)">${m.year}</td>
+      <td style="color:var(--muted);font-size:.74rem">${esc(m.round||"")}</td>
+      <td style="text-align:right;font-weight:600">${esc(m.team1)}</td>
+      <td style="text-align:center;font-weight:800;white-space:nowrap">${ss(m.score)}</td>
+      <td style="font-weight:600">${esc(m.team2)}</td></tr>`).join("")}</tbody></table>`;
+}
+$("#cmpGo").addEventListener("click",()=>{
+  const a=$("#cmpA").value, b=$("#cmpB").value;
+  if(!a||!b||a===b){ $("#cmpOut").innerHTML=`<div class="empty-note">${t2("Pick two different teams.","Διάλεξε δύο διαφορετικές ομάδες.")}</div>`; return; }
+  $("#cmpOut").innerHTML=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem" class="cmp-cols">${sideCol(a)}${sideCol(b)}</div>
+    <div style="text-align:center;margin-top:.9rem"><button class="btn gold" id="cmpH2H"><i class="fa-solid fa-clock-rotate-left"></i> ${t2("World Cup head-to-head (1930–2022)","Ιστορικό σε Μουντιάλ (1930–2022)")}</button></div>
+    <div id="cmpH2HOut" style="margin-top:.7rem"></div>`;
+  $("#cmpH2H").addEventListener("click",()=>h2h(a,b,$("#cmpH2HOut")));
+});
 })();
 </script>
 </body>
