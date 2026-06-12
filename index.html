@@ -845,7 +845,7 @@ nav.tabs button.active::after{content:"";position:absolute;left:18%;right:18%;bo
    confirmed playoff results of March 31 2026).
    ════════════════════════════════════════════════════════════════ */
 const TOURNAMENT_DATA = {
-  lastUpdated: "2026-06-12T11:45:00+03:00",
+  lastUpdated: "2026-06-12T12:15:00+03:00",
   dayOne: "2026-06-11",
 
   /* ---------- 48 TEAMS ---------- */
@@ -1113,6 +1113,7 @@ const TOURNAMENT_DATA = {
   ],
 
   changelog:[
+    "2026-06-12 12:15 — Official FIFA squads now auto-load from openfootball for every team missing a roster (all 48 covered on any online load). News entries can now carry source article links (Sport24/Gazzetta).",
     "2026-06-12 11:45 — V3 Pro UI: mesh-gradient background with film grain, animated aurora hero, kinetic entrance typography, 48-nation flag river, bento quick-stats with count-up numbers, gradient-border glass cards, staggered card animations, button sheen micro-interactions, blurred-flag team banners, skeleton shimmer loaders. Honors prefers-reduced-motion.",
     "2026-06-12 11:00 — V2 pack: Team Comparison tool (ranking, form, schedule, all-time WC head-to-head), redesigned bilingual News with featured story, mobile bottom navigation bar, fixed Greek menu overflow, fuller Greek translation coverage.",
     "2026-06-11 08:00 — App launched: full 104-match schedule, 12 groups, bracket, 16 stadiums, 48 team profiles, provisional squads for 16 contenders.",
@@ -1497,10 +1498,10 @@ function showTeam(code){
     </div>
     <div class="panel"><h3><i class="fa-solid fa-book-open"></i> ${TT.hHist}</h3><p style="font-size:.9rem;color:var(--muted)">${esc(t.history)}</p></div>
     <div class="panel"><h3><i class="fa-regular fa-calendar"></i> ${TT.hSched}</h3><div class="match-grid">${tm.map(matchCard).join("")}</div></div>
-    <div class="panel"><h3><i class="fa-solid fa-shirt"></i> ${TT.hSquad} ${squad.length?`<span class="badge gold" style="margin-left:.5em">provisional</span>`:""}</h3>
-    ${squad.length?`<p style="font-size:.74rem;color:var(--muted);margin-bottom:.7rem">26-man list based on pre-tournament reporting — reconciled with the official FIFA list in the daily update.</p>
+    <div class="panel"><h3><i class="fa-solid fa-shirt"></i> ${TT.hSquad} ${squad.length?`<span class="badge ${t.squadSrc==="of"?"green":"gold"}" style="margin-left:.5em">${t.squadSrc==="of"?(LANG==="el"?"επίσημο":"official"):(LANG==="el"?"προσωρινό":"provisional")}</span>`:""}</h3>
+    ${squad.length?`<p style="font-size:.74rem;color:var(--muted);margin-bottom:.7rem">${t.squadSrc==="of"?(LANG==="el"?"Επίσημη 26άδα FIFA — πηγή: openfootball open data.":"Official FIFA 26-man list — source: openfootball open data."):(LANG==="el"?"26άδα βάσει δημοσιευμάτων — διασταυρώνεται με την επίσημη λίστα FIFA στο ημερήσιο update.":"26-man list based on pre-tournament reporting — reconciled with the official FIFA list in the daily update.")}</p>
       <div style="overflow-x:auto"><table class="data"><thead><tr><th>#</th><th>Player</th><th>Pos</th><th>Club</th><th>Age</th></tr></thead><tbody>
-      ${sq.map(p=>`<tr><td><b>${p[0]}</b></td><td>${esc(p[1])}</td><td><span class="pos-pill pos-${p[2]}">${p[2]}</span></td><td>${esc(p[3])}</td><td>${p[4]}</td></tr>`).join("")}
+      ${sq.map(p=>`<tr><td><b>${p[0]}</b></td><td>${esc(p[1])}</td><td><span class="pos-pill pos-${p[2]}">${p[2]}</span></td><td>${p[3]&&p[3]!=="—"?esc(p[3]):'<span style="color:var(--muted)">—</span>'}</td><td>${p[4]||'<span style="color:var(--muted)">—</span>'}</td></tr>`).join("")}
       </tbody></table></div>`:
       `<div class="empty-note"><i class="fa-solid fa-hourglass-half"></i> Official 26-man squad will be synced in the next daily update.</div>`}
     </div>`;
@@ -1715,7 +1716,9 @@ function renderNews(){
     const ic=tagIcon[n.tag]||"fa-circle-info", tc=tagCls[n.tag]||"blue";
     return `<div class="news-item ${i===0?"featured":""}">
       <div class="nmeta"><span class="badge ${tc}"><i class="fa-solid ${ic}"></i> ${esc(n.tag)}</span><span><i class="fa-regular fa-clock"></i> ${dstr(n.date)}</span></div>
-      <h3>${esc(t)}</h3><p>${esc(b)}</p></div>`;
+      <h3>${esc(t)}</h3><p>${esc(b)}</p>
+      ${Array.isArray(n.links)&&n.links.length?`<div style="display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.6rem">${n.links.map(l=>`<a class="chip" style="text-decoration:none" href="${esc(l.u)}" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> ${esc(l.t)}</a>`).join("")}</div>`
+        :(n.link?`<a class="chip" style="text-decoration:none;margin-top:.6rem;display:inline-flex" href="${esc(n.link)}" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> ${LANG==="el"?"Διάβασε το άρθρο →":"Read the article →"}</a>`:"")}</div>`;
   }).join("");
   $("#changelog").innerHTML=D.changelog.map(c=>`<li style="padding:.3em 0"><i class="fa-solid fa-check" style="color:var(--green);margin-right:.5em"></i>${esc(c)}</li>`).join("");
   const upd=new Date(D.lastUpdated).toLocaleString(LOC,{timeZone:TZ,day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"});
@@ -2426,6 +2429,48 @@ document.querySelectorAll(".quickstats .qs b").forEach((b,i)=>{
   const v=parseInt(b.textContent,10);
   if(!isNaN(v)) setTimeout(()=>countUp(b,v,1200),750+i*120);
 });
+})();
+</script>
+<script>
+/* ════════ OFFICIAL SQUADS AUTO-SYNC (openfootball worldcup.squads.json) ════════
+   Fills any team whose squad array is empty with the official FIFA 26-man list.
+   Runs on every load; squads render at click-time so no re-render is needed. */
+(function(){
+"use strict";
+const D=TOURNAMENT_DATA;
+const NAME2CODE={"czech republic":"CZE","czechia":"CZE","south korea":"KOR","korea republic":"KOR","south africa":"RSA","bosnia and herzegovina":"BIH","united states":"USA","usa":"USA","türkiye":"TUR","turkey":"TUR","ivory coast":"CIV","côte d'ivoire":"CIV","dr congo":"COD","congo dr":"COD","cape verde":"CPV","cabo verde":"CPV","iran":"IRN","ir iran":"IRN","saudi arabia":"KSA","new zealand":"NZL","netherlands":"NED"};
+function codeOf(entry){
+  if(entry.fifa_code&&D.teams[entry.fifa_code]) return entry.fifa_code;
+  const low=(entry.name||"").toLowerCase();
+  if(NAME2CODE[low]&&D.teams[NAME2CODE[low]]) return NAME2CODE[low];
+  return Object.keys(D.teams).find(c=>D.teams[c].name.toLowerCase()===low)||null;
+}
+function age(dob){
+  if(!dob) return "";
+  const b=new Date(dob); if(isNaN(b)) return "";
+  const n=new Date("2026-06-11");
+  let a=n.getFullYear()-b.getFullYear();
+  if(n.getMonth()<b.getMonth()||(n.getMonth()===b.getMonth()&&n.getDate()<b.getDate())) a--;
+  return a;
+}
+fetch("https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.squads.json",{cache:"default"})
+ .then(r=>r.ok?r.json():null)
+ .then(j=>{
+   if(!Array.isArray(j)) return;
+   let filled=0;
+   j.forEach(entry=>{
+     const c=codeOf(entry); if(!c) return;
+     const t=D.teams[c];
+     if(t.squad&&t.squad.length) return;            /* keep file-baked squads */
+     if(!Array.isArray(entry.players)||!entry.players.length) return;
+     t.squad=entry.players.map(pl=>[pl.number||"",pl.name||"?",(pl.pos||"").toUpperCase()||"MF","—",age(pl.date_of_birth)]);
+     t.squadSrc="of"; filled++;
+   });
+   if(filled){ const tEl=document.querySelector("#toast");
+     if(tEl){ tEl.textContent=(localStorage.getItem("wc26:lang")==='"el"'?"Φορτώθηκαν επίσημες αποστολές για ":"Official squads loaded for ")+filled+(localStorage.getItem("wc26:lang")==='"el"'?" ομάδες ✓":" teams ✓");
+       tEl.classList.add("show"); setTimeout(()=>tEl.classList.remove("show"),2400); } }
+ })
+ .catch(()=>{});
 })();
 </script>
 </body>
