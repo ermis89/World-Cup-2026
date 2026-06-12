@@ -41,8 +41,7 @@ jobs:
 
       - name: Download latest file from OneDrive
         run: |
-          cj "$ONEDRIVE_URL" -o index.html.new
-          # Safety check: make sure we actually got the app, not an error page
+          curl -fsSL --retry 3 -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" -c /tmp/cj -b /tmp/cj "$ONEDRIVE_URL" -o index.html.new
           grep -q "TOURNAMENT_DATA" index.html.new
           mv index.html.new index.html
 
