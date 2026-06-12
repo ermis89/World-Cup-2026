@@ -41,7 +41,7 @@ jobs:
 
       - name: Download latest file from OneDrive
         run: |
-          curl -fsSL "$ONEDRIVE_URL" -o index.html.new
+          cj "$ONEDRIVE_URL" -o index.html.new
           # Safety check: make sure we actually got the app, not an error page
           grep -q "TOURNAMENT_DATA" index.html.new
           mv index.html.new index.html
