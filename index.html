@@ -405,6 +405,72 @@ html[lang="el"] nav.tabs button{padding:.5em .66em;font-size:.82rem}
   #stadMap{height:300px!important}
   .sec-head h2{font-size:1.35rem}
 }
+
+/* ═══════════ V3 PRO UI — 2026 design trends pack ═══════════ */
+body{background-image:
+  radial-gradient(900px 480px at 85% -10%, rgba(0,102,255,.20), transparent 60%),
+  radial-gradient(700px 420px at -10% 12%, rgba(255,215,0,.09), transparent 55%),
+  radial-gradient(800px 500px at 50% 110%, rgba(123,0,255,.10), transparent 60%);}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.05;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
+.aurora{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.aurora i{position:absolute;width:46vw;height:46vw;max-width:560px;max-height:560px;border-radius:50%;filter:blur(90px);opacity:.4}
+.aurora i:nth-child(1){background:#0066FF;top:-22%;left:8%;animation:drift1 16s ease-in-out infinite alternate}
+.aurora i:nth-child(2){background:#FFD700;top:10%;right:-12%;opacity:.18;animation:drift2 20s ease-in-out infinite alternate}
+.aurora i:nth-child(3){background:#7b00ff;bottom:-30%;left:38%;opacity:.22;animation:drift3 24s ease-in-out infinite alternate}
+@keyframes drift1{to{transform:translate(9vw,7vh) scale(1.15)}}
+@keyframes drift2{to{transform:translate(-7vw,9vh) scale(.9)}}
+@keyframes drift3{to{transform:translate(-9vw,-7vh) scale(1.2)}}
+.hero .kicker{animation:heroin .7s .05s both}
+.hero h1{animation:heroin .8s .15s both}
+.hero .sub{animation:heroin .8s .3s both}
+.hero .hosts{animation:heroin .8s .42s both}
+.hero .countdown,.hero .cd-label{animation:heroin .9s .55s both}
+.hero .quickstats{animation:heroin .9s .7s both}
+@keyframes heroin{from{opacity:0;transform:translateY(26px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.flagriver{overflow:hidden;margin:1.6rem auto 0;max-width:880px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.flagriver .inner{display:flex;gap:.55rem;width:max-content;animation:river 70s linear infinite}
+.flagriver img{width:34px;height:25px;border-radius:5px;box-shadow:0 2px 6px rgba(0,0,0,.4);transition:transform .2s;cursor:pointer}
+.flagriver img:hover{transform:scale(1.35)}
+.flagriver:hover .inner{animation-play-state:paused}
+@keyframes river{to{transform:translateX(-50%)}}
+.quickstats .qs{position:relative;border:1px solid transparent;background:
+  linear-gradient(var(--glass),var(--glass)) padding-box,
+  linear-gradient(135deg,rgba(0,102,255,.55),rgba(255,255,255,.06) 40%,rgba(255,215,0,.45)) border-box;
+  transition:transform .25s,box-shadow .25s}
+.quickstats .qs:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 14px 30px rgba(0,102,255,.22)}
+.quickstats .qs:first-child{flex:1.6 1 190px}
+.mcard:hover,.tcard:hover,.scard:hover{border-color:transparent;background:
+  linear-gradient(var(--glass),var(--glass)) padding-box,
+  linear-gradient(135deg,rgba(0,102,255,.7),rgba(255,215,0,.5)) border-box}
+section.page.active .mcard,section.page.active .tcard,section.page.active .scard,
+section.page.active .gcard,section.page.active .news-item,section.page.active .panel{animation:rise .5s cubic-bezier(.2,.7,.3,1) both}
+section.page.active :is(.mcard,.tcard,.scard,.gcard,.news-item):nth-child(1){animation-delay:.03s}
+section.page.active :is(.mcard,.tcard,.scard,.gcard,.news-item):nth-child(2){animation-delay:.08s}
+section.page.active :is(.mcard,.tcard,.scard,.gcard,.news-item):nth-child(3){animation-delay:.13s}
+section.page.active :is(.mcard,.tcard,.scard,.gcard,.news-item):nth-child(4){animation-delay:.18s}
+section.page.active :is(.mcard,.tcard,.scard,.gcard,.news-item):nth-child(5){animation-delay:.23s}
+section.page.active :is(.mcard,.tcard,.scard,.gcard,.news-item):nth-child(n+6){animation-delay:.28s}
+@keyframes rise{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;top:0;left:-80%;width:55%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .45s}
+.btn:hover::after{left:130%}
+.icon-btn:active,.btn:active,.chip:active{transform:scale(.94)}
+nav.tabs button.active{position:relative}
+nav.tabs button.active::after{content:"";position:absolute;left:18%;right:18%;bottom:2px;height:2px;border-radius:99px;background:var(--gold);box-shadow:0 0 8px var(--gold)}
+.mcard.status-live .stage-tag{color:var(--green)}
+.tdetail-head{position:relative;border-radius:var(--r);padding:1.6rem 1.4rem;overflow:hidden;isolation:isolate;border:1px solid var(--glass-brd)}
+.tdetail-head::before{content:"";position:absolute;inset:-30px;background-image:var(--bf);background-size:cover;background-position:center;filter:blur(34px) saturate(1.3);opacity:.4;z-index:-2}
+.tdetail-head::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(13,13,26,.82),rgba(13,13,26,.45));z-index:-1}
+[data-theme="light"] .tdetail-head::after{background:linear-gradient(100deg,rgba(255,255,255,.85),rgba(255,255,255,.55))}
+.empty-note{position:relative;overflow:hidden}
+.empty-note::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.06) 50%,transparent 70%);animation:shimmer 1.6s infinite}
+@keyframes shimmer{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+.gcard header h3{background:linear-gradient(90deg,var(--text),var(--blue2),var(--text));background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gradmove 6s linear infinite}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+  .flagriver .inner{animation:none}
+}
 </style>
 </head>
 <body>
@@ -779,7 +845,7 @@ html[lang="el"] nav.tabs button{padding:.5em .66em;font-size:.82rem}
    confirmed playoff results of March 31 2026).
    ════════════════════════════════════════════════════════════════ */
 const TOURNAMENT_DATA = {
-  lastUpdated: "2026-06-12T11:00:00+03:00",
+  lastUpdated: "2026-06-12T11:45:00+03:00",
   dayOne: "2026-06-11",
 
   /* ---------- 48 TEAMS ---------- */
@@ -1047,6 +1113,7 @@ const TOURNAMENT_DATA = {
   ],
 
   changelog:[
+    "2026-06-12 11:45 — V3 Pro UI: mesh-gradient background with film grain, animated aurora hero, kinetic entrance typography, 48-nation flag river, bento quick-stats with count-up numbers, gradient-border glass cards, staggered card animations, button sheen micro-interactions, blurred-flag team banners, skeleton shimmer loaders. Honors prefers-reduced-motion.",
     "2026-06-12 11:00 — V2 pack: Team Comparison tool (ranking, form, schedule, all-time WC head-to-head), redesigned bilingual News with featured story, mobile bottom navigation bar, fixed Greek menu overflow, fuller Greek translation coverage.",
     "2026-06-11 08:00 — App launched: full 104-match schedule, 12 groups, bracket, 16 stadiums, 48 team profiles, provisional squads for 16 contenders.",
     "2026-06-11 08:00 — Standings initialised at zero; stats tables will populate after Matchday 1.",
@@ -1418,7 +1485,7 @@ function showTeam(code){
   const sq=[...squad].sort((a,b)=>posOrder[a[2]]-posOrder[b[2]]||a[0]-b[0]);
   $("#teamDetail").innerHTML=`
     <button class="back-link" id="teamBack"><i class="fa-solid fa-arrow-left"></i> ${TT.backTeams}</button>
-    <div class="tdetail-head">${flagImg(code,"flag xl")}
+    <div class="tdetail-head" style="--bf:url(https://flagcdn.com/w320/${t.flag}.png)">${flagImg(code,"flag xl")}
       <div><h2>${esc(t.name)}</h2>
         <div class="facts">
           <span class="badge blue">${TT.group} ${t.group} · currently ${pos}${["st","nd","rd"][pos-1]||"th"}</span>
@@ -2328,6 +2395,36 @@ $("#cmpGo").addEventListener("click",()=>{
     <div style="text-align:center;margin-top:.9rem"><button class="btn gold" id="cmpH2H"><i class="fa-solid fa-clock-rotate-left"></i> ${t2("World Cup head-to-head (1930–2022)","Ιστορικό σε Μουντιάλ (1930–2022)")}</button></div>
     <div id="cmpH2HOut" style="margin-top:.7rem"></div>`;
   $("#cmpH2H").addEventListener("click",()=>h2h(a,b,$("#cmpH2HOut")));
+});
+})();
+</script>
+<script>
+/* ════════ V3 PRO UI — aurora, flag river, count-up stats ════════ */
+(function(){
+"use strict";
+const $=q=>document.querySelector(q);
+const D=TOURNAMENT_DATA;
+/* aurora blobs */
+const hero=$(".hero");
+if(hero){ const a=document.createElement("div"); a.className="aurora"; a.innerHTML="<i></i><i></i><i></i>"; hero.insertBefore(a,hero.firstChild); }
+/* flag river — all 48 nations */
+const codes=Object.keys(D.teams);
+const imgs=codes.map(c=>`<img src="https://flagcdn.com/w80/${D.teams[c].flag}.png" alt="${D.teams[c].name}" title="${D.teams[c].name}" data-team="${c}" loading="lazy">`).join("");
+const fr=document.createElement("div"); fr.className="flagriver";
+fr.innerHTML=`<div class="inner">${imgs}${imgs}</div>`;
+const qs=$(".quickstats");
+if(qs) qs.parentElement.insertBefore(fr,qs);
+/* count-up quickstats */
+function countUp(el,target,dur){
+  const t0=performance.now();
+  function step(t){ const k=Math.min(1,(t-t0)/dur);
+    el.textContent=Math.round(target*(1-Math.pow(1-k,3)));
+    if(k<1) requestAnimationFrame(step); }
+  requestAnimationFrame(step);
+}
+document.querySelectorAll(".quickstats .qs b").forEach((b,i)=>{
+  const v=parseInt(b.textContent,10);
+  if(!isNaN(v)) setTimeout(()=>countUp(b,v,1200),750+i*120);
 });
 })();
 </script>
