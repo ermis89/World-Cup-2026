@@ -29,7 +29,7 @@ permissions:
 
 env:
   # ⬇⬇⬇ PASTE THE SHARE LINK OF THE workspace/output FILE HERE (keep &download=1) ⬇⬇⬇
-  ONEDRIVE_URL: "https://cspcosmos-my.sharepoint.com/:u:/g/personal/andreadakisj_cspcosmos_onmicrosoft_com/IQCCaqvagksMTYAcLA8u3pQXAYv0NwRZVfPvITQZIUJ2ftY?e=R4yz3x&download=1"
+  ONEDRIVE_URL: "https://cspcosmos-my.sharepoint.com/:u:/g/personal/andreadakisj_cspcosmos_onmicrosoft_com/IQCMMZig6Iz5QKcRbL1Sn2SVAbukDO2kZCMFHEUx5dZS3rg?e=Fwpw9d&download=1"
 
 jobs:
   sync:
