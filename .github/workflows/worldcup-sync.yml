@@ -4,19 +4,18 @@
 #
 #  WHAT IT DOES
 #  Every morning at 08:45 Athens time (05:45 UTC) it downloads the
-#  latest worldcup2026.html from your OneDrive share link and, if it
-#  changed, commits it as index.html — your GitHub Pages site updates
-#  automatically. You can also run it manually from the Actions tab.
+#  latest worldcup2026.html from your OneDrive share link, strips any
+#  stray text before <!DOCTYPE html>, and (if it changed) commits it
+#  as index.html — your GitHub Pages site updates automatically.
+#  You can also run it manually from the Actions tab.
 #
-#  SETUP (one time)
-#  1. In OneDrive: right-click worldcup2026.html → Share →
-#     "Anyone with the link" (view) → Copy link.
-#  2. Paste that link below in ONEDRIVE_URL — keep the &download=1
-#     suffix exactly as shown.
-#     Example result:
-#     https://cspcosmos-my.sharepoint.com/:u:/g/personal/..../AbCdEf?e=xyz&download=1
-#  3. No tokens needed — GitHub Actions' built-in permission handles
-#     the commit.
+#  IMPORTANT — which file to share:
+#  The daily task now writes to the file at
+#    Documents/Cowork/sessions/be408fc9-.../workspace/output/worldcup2026.html
+#  (the most-recently-modified worldcup2026.html in your OneDrive).
+#  Create the "Anyone with the link" share from THAT file and paste it
+#  into ONEDRIVE_URL below — keep the &download=1 suffix.
+#  No tokens are needed; GitHub Actions' built-in permission commits.
 # ════════════════════════════════════════════════════════════════
 name: Sync World Cup app from OneDrive
 
@@ -29,8 +28,8 @@ permissions:
   contents: write
 
 env:
-  # ⬇⬇⬇ PASTE YOUR ONEDRIVE SHARE LINK HERE (keep &download=1) ⬇⬇⬇
-   ONEDRIVE_URL: "https://cspcosmos-my.sharepoint.com/:u:/g/personal/andreadakisj_cspcosmos_onmicrosoft_com/IQCCaqvagksMTYAcLA8u3pQXAYv0NwRZVfPvITQZIUJ2ftY?e=R4yz3x&download=1"
+  # ⬇⬇⬇ PASTE THE SHARE LINK OF THE workspace/output FILE HERE (keep &download=1) ⬇⬇⬇
+  ONEDRIVE_URL: "https://cspcosmos-my.sharepoint.com/:u:/g/personal/andreadakisj_cspcosmos_onmicrosoft_com/IQCCaqvagksMTYAcLA8u3pQXAYv0NwRZVfPvITQZIUJ2ftY?e=R4yz3x&download=1"
 
 jobs:
   sync:
@@ -42,7 +41,9 @@ jobs:
       - name: Download latest file from OneDrive
         run: |
           curl -fsSL --retry 3 -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" -c /tmp/cj -b /tmp/cj "$ONEDRIVE_URL" -o index.html.new
+          # Strip anything before <!DOCTYPE html> (guards against stray text at the top)
           sed -i '/<!DOCTYPE html>/,$!d' index.html.new
+          # Safety check: make sure we actually got the app, not an error/login page
           grep -q "TOURNAMENT_DATA" index.html.new
           mv index.html.new index.html
 
