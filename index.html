@@ -845,7 +845,7 @@ nav.tabs button.active::after{content:"";position:absolute;left:18%;right:18%;bo
    confirmed playoff results of March 31 2026).
    ════════════════════════════════════════════════════════════════ */
 const TOURNAMENT_DATA = {
-  lastUpdated: "2026-06-19T08:00:00+03:00",
+  lastUpdated: "2026-06-20T08:00:00+03:00",
   dayOne: "2026-06-11",
 
   /* ---------- 48 TEAMS ---------- */
@@ -1228,7 +1228,37 @@ const TOURNAMENT_DATA = {
       subs:[{team:"KOR",off:"Son Heung-min",on:"Hwang Hee-chan",min:57},{team:"KOR",off:"Lee Jae-sung",on:"Oh Hyeon-gyu",min:57},{team:"MEX",off:"Luis Romo",on:"Obed Vargas",min:71},{team:"MEX",off:"Brian Gutiérrez",on:"Orbelín Pineda",min:71},{team:"KOR",off:"Seol Young-woo",on:"Yang Hyun-jun",min:71},{team:"MEX",off:"Roberto Alvarado",on:"Israel Reyes",min:80},{team:"MEX",off:"Raúl Jiménez",on:"Santiago Giménez",min:80}],
       stats:{possession:[42,58],shots:[8,9],onTarget:[4,2],corners:[1,2]},
       motm:"Luis Romo",
-      lineups:{home:["Rangel","Sánchez","Álvarez","Vásquez","Gallardo","Lira","Romo","Gutiérrez","Alvarado","Quiñones","Jiménez"],away:["Kim Seung-gyu","Lee Han-beom","Kim Min-jae","Lee Gi-hyuk","Kim Moon-hwan","Hwang In-beom","Paik Seung-ho","Seol Young-woo","Lee Kang-in","Lee Jae-sung","Son Heung-min"]}}
+      lineups:{home:["Rangel","Sánchez","Álvarez","Vásquez","Gallardo","Lira","Romo","Gutiérrez","Alvarado","Quiñones","Jiménez"],away:["Kim Seung-gyu","Lee Han-beom","Kim Min-jae","Lee Gi-hyuk","Kim Moon-hwan","Hwang In-beom","Paik Seung-ho","Seol Young-woo","Lee Kang-in","Lee Jae-sung","Son Heung-min"]}},
+    {id:29,score:[2,0],pens:null,status:"FT",
+      scorers:[{team:"USA",player:"Cameron Burgess (OG)",min:11},{team:"USA",player:"Alex Freeman",min:43}],
+      assists:[{team:"USA",player:"Folarin Balogun",min:11},{team:"USA",player:"Sergiño Dest",min:43}],
+      cards:[{team:"USA",player:"Antonee Robinson",min:56,type:"Y"},{team:"AUS",player:"Harry Souttar",min:88,type:"Y"},{team:"USA",player:"Folarin Balogun",min:89,type:"Y"},{team:"AUS",player:"Jacob Italiano",min:89,type:"Y"},{team:"USA",player:"Chris Richards",min:90,type:"Y"}],
+      subs:[{team:"AUS",off:"Mohamed Touré",on:"Nestory Irankunda",min:45},{team:"AUS",off:"Nishan Velupillay",on:"Connor Metcalfe",min:45},{team:"AUS",off:"Mathew Leckie",on:"Cristian Volpato",min:61},{team:"USA",off:"Ricardo Pepi",on:"Sebastian Berhalter",min:74},{team:"AUS",off:"Patrick Okon-Engstler",on:"Jackson Irvine",min:78},{team:"USA",off:"Antonee Robinson",on:"Auston Trusty",min:80}],
+      stats:{possession:[70,30],shots:[9,2],onTarget:[2,1],corners:[3,2]},
+      motm:"Alex Freeman",
+      lineups:{home:["Freese","Dest","Richards","Ream","Robinson","Adams","McKennie","Tillman","Freeman","Balogun","Pepi"],away:["Beach","Circati","Souttar","Burgess","Bos","Leckie","O'Neill","Okon-Engstler","Velupillay","Touré","Italiano"]}},
+    {id:30,score:[0,1],pens:null,status:"FT",
+      scorers:[{team:"MAR",player:"Ismael Saibari",min:2}],
+      assists:[{team:"MAR",player:"Brahim Díaz",min:2}],
+      cards:[],
+      stats:{},
+      motm:"Ismael Saibari",
+      lineups:{home:[],away:[]}},
+    {id:31,score:[3,0],pens:null,status:"FT",
+      scorers:[{team:"BRA",player:"Matheus Cunha",min:22},{team:"BRA",player:"Matheus Cunha",min:36},{team:"BRA",player:"Vinícius Júnior",min:45}],
+      assists:[],
+      cards:[],
+      stats:{},
+      motm:"Matheus Cunha",
+      lineups:{home:[],away:[]}},
+    {id:32,score:[0,1],pens:null,status:"FT",
+      scorers:[{team:"PAR",player:"Matías Galarza",min:2}],
+      assists:[],
+      cards:[{team:"PAR",player:"Matías Galarza",min:4,type:"Y"},{team:"PAR",player:"Miguel Almirón",min:45,type:"R"},{team:"TUR",player:"Eren Elmali",min:70,type:"Y"}],
+      subs:[{team:"TUR",off:"Ismail Yüksek",on:"Can Uzun",min:59},{team:"TUR",off:"Yunus Akgün",on:"Deniz Gül",min:59},{team:"PAR",off:"Diego Gómez",on:"Gustavo Velázquez",min:66},{team:"TUR",off:"Ferdi Kadıoğlu",on:"Eren Elmali",min:69},{team:"PAR",off:"Juan José Cáceres",on:"Alexandro Maidana",min:80},{team:"PAR",off:"Julio Enciso",on:"Gabriel Ávalos",min:90}],
+      stats:{possession:[79,21],shots:[29,6],onTarget:[6,2],corners:[11,0]},
+      motm:"Matías Galarza",
+      lineups:{home:["Çakır","Müldür","Bardakçı","Demiral","Kadıoğlu","Yüksek","Çalhanoğlu","Güler","Akgün","Yıldız","Aktürkoğlu"],away:["Gill","Alderete","G. Gómez","Alonso","Cáceres","Cubas","D. Gómez","Almirón","Enciso","Galarza","Pitta"]}}
   ],
 
   /* Optional manual stat overrides (filled by daily update if needed) */
@@ -1268,6 +1298,7 @@ const TOURNAMENT_DATA = {
   pollOptions:["ESP","FRA","ENG","POR","BRA","ARG","GER","NED"],
 
   news:[
+    {date:"2026-06-19",tag:"Recap",title:"Day 9 Recap: USA qualify, Haiti out, Saibari's fastest goal",body:"Matchday 2 of Groups C and D. The USA became the second team into the Round of 32, beating Australia 2-0 in Seattle (a Burgess own goal and an Alex Freeman header) — though they did it without the injured Christian Pulisic. Brazil cruised past Haiti 3-0 in Philadelphia, Matheus Cunha's brace and a Vinícius Júnior strike confirming Haiti as the first nation eliminated, though Raphinha limped off injured. Morocco edged Scotland 1-0 in Boston through Ismael Saibari's strike after just 70 seconds — the fastest goal of the tournament so far. And Paraguay stunned Türkiye 0-1 in Santa Clara through Matías Galarza's 2nd-minute golazo, holding on with ten men after Miguel Almirón's red card (the new anti-discrimination 'covering the mouth' directive) — a result that eliminates Türkiye and all but seals top spot for the USA. Today, June 20, Matchday 2 continues with Scotland's group and more.",titleEl:"Ημέρα 9: Προκρίθηκαν οι ΗΠΑ, εκτός η Αϊτή, το ταχύτερο γκολ από τον Σαϊμπάρι",bodyEl:"2η αγωνιστική σε C και D. Οι ΗΠΑ έγιναν η δεύτερη ομάδα στη Φάση των 32, με 2-0 επί της Αυστραλίας στο Σιάτλ (αυτογκόλ Μπέρτζες, κεφαλιά Φρίμαν) — χωρίς τον τραυματία Πούλισιτς. Η Βραζιλία επικράτησε 3-0 της Αϊτής στη Φιλαδέλφεια (δύο γκολ Κούνια, ένα Βινίσιους) και η Αϊτή έγινε η πρώτη ομάδα εκτός· ο Ραφίνια βγήκε τραυματίας. Το Μαρόκο νίκησε 1-0 τη Σκωτία με γκολ του Σαϊμπάρι στα πρώτα 70 δευτερόλεπτα — το ταχύτερο της διοργάνωσης. Και η Παραγουάη «λύγισε» 0-1 την Τουρκία στη Σάντα Κλάρα με γκολάρα Γκαλάρσα στο 2', αντέχοντας με 10 παίκτες μετά την κόκκινη του Αλμιρόν — αποτέλεσμα που αποκλείει την Τουρκία. Σήμερα 20/6 συνεχίζεται η 2η αγωνιστική."},
     {date:"2026-06-18",tag:"Recap",title:"Day 8 Recap: David hat-trick & Canada rout, Mexico first to qualify",body:"Matchday 2 began in Groups A and B. Co-hosts Mexico became the first team to reach the Round of 32, edging South Korea 1-0 in Guadalajara through Luis Romo's 50th-minute goal after a goalkeeping error. Canada thrashed nine-man Qatar 6-0 in Vancouver — Jonathan David scoring a hat-trick (Qatar had Madibo and Manai both sent off) for Canada's first-ever World Cup win. Switzerland erupted late to beat 10-man Bosnia 4-1 at SoFi Stadium, substitute Johan Manzambi scoring twice and Xhaka converting a stoppage-time penalty after Muharemović's red card. And South Africa snatched a 1-1 draw with Czechia in Atlanta through Teboho Mokoena's emotional late penalty, cancelling Michal Sadílek's 6th-minute opener — though Mokoena is now suspended for the finale. Today, June 19: Canada v Qatar already done — next up USA v Australia, plus more Matchday-2 action.",titleEl:"Ημέρα 8: Χατ-τρικ Ντέιβιντ & διασυρμός Καναδά, πρώτο προκρίθηκε το Μεξικό",bodyEl:"Άρχισε η 2η αγωνιστική σε A και B. Το Μεξικό έγινε η πρώτη ομάδα που πέρασε στη Φάση των 32, με 1-0 επί της Ν. Κορέας στη Γκουαδαλαχάρα (γκολ Ρόμο 50' μετά από λάθος τερματοφύλακα). Ο Καναδάς διέλυσε 6-0 το Κατάρ (με 9 παίκτες — κόκκινες Μαντίμπο & Μανάι), με χατ-τρικ του Τζόναθαν Ντέιβιντ για την πρώτη νίκη του Καναδά σε Μουντιάλ. Η Ελβετία «εξερράγη» στο φινάλε, 4-1 τη Βοσνία (με 10 παίκτες) — δύο γκολ ο Μανζάμπι, πέναλτι Τσάκα στο 90+7'. Και η Ν. Αφρική πήρε 1-1 με την Τσεχία στην Ατλάντα χάρη σε συγκινησιακό πέναλτι του Μοκοένα, ο οποίος όμως τιμωρείται για το επόμενο. Σήμερα 19/6: ΗΠΑ–Αυστραλία και άλλα ματς 2ης αγωνιστικής."},
     {date:"2026-06-17",tag:"Recap",title:"Day 7 Recap: Kane fires England, Ronaldo held, Colombia & Ghana strike late",body:"Groups K and L opened up. Harry Kane scored twice as England beat Croatia 4-2 in Dallas, Jude Bellingham and Marcus Rashford completing a statement win in a 2018-final rematch. Cristiano Ronaldo's Portugal were stunned, held 1-1 by DR Congo as Yoane Wissa cancelled out João Neves' early header for a historic Leopards point despite 75% Portugal possession. Colombia marked their return with a 3-1 win over debutants Uzbekistan, Luis Díaz scoring one and making another; Fayzullaev's header was Uzbekistan's first-ever World Cup goal. And Ghana snatched a dramatic 1-0 win over Panama through Caleb Yirenkyi in the 95th minute. Today, June 18, Matchday 2 begins: Czechia v South Africa and Switzerland v Bosnia.",titleEl:"Ημέρα 7: Δίδυμο Κέιν, κόλλησε ο Ρονάλντο, αργοπορημένα χτυπήματα Κολομβίας & Γκάνα",bodyEl:"Άνοιξαν οι όμιλοι K και L. Ο Κέιν με δύο γκολ οδήγησε την Αγγλία στο 4-2 επί της Κροατίας στο Ντάλας, με Μπέλιγχαμ και Ράσφορντ να ολοκληρώνουν τη νίκη σε ρεβάνς του τελικού του 2018. Η Πορτογαλία του Ρονάλντο γνώρισε σοκ, 1-1 με τη ΛΔ Κονγκό — ο Γουίσα ισοφάρισε το γκολ του Νέβες παρά το 75% κατοχής. Η Κολομβία νίκησε 3-1 την πρωτάρα Ουζμπεκιστάν (γκολ & ασίστ ο Λουίς Ντίας· πρώτο ιστορικό γκολ Ουζμπεκιστάν ο Φαϊζουλάεφ). Και η Γκάνα 1-0 τον Παναμά με γκολ Γιρένκι στο 90+5'. Σήμερα 18/6: Τσεχία–Ν.Αφρική, Ελβετία–Βοσνία."},
     {date:"2026-06-16",tag:"Recap",title:"Day 6 Recap: Messi, Mbappé & Haaland all star as the giants roar",body:"Matchday 1 of Groups I and J served up the stars. In Kansas City, Lionel Messi marked his record 200th cap with a hat-trick (17', 60', 76') in Argentina's 3-0 win over Algeria, equalling Miroslav Klose's all-time World Cup record of 16 goals. France beat Senegal 3-1 in New Jersey through a Kylian Mbappé brace and a Bradley Barcola strike, Ibrahim Mbaye netting a late Senegal consolation. Erling Haaland announced himself with a brace on his World Cup debut as Norway crushed Iraq 4-1 in Boston (Østigård and an own goal completing it), though Aymen Hussein's header was Iraq's first World Cup goal in 40 years. And Austria won a World Cup match for the first time in 36 years, edging debutants Jordan 3-1 — Romano Schmid's screamer and a stoppage-time Arnautović penalty sealing it after Ali Olwan's historic first-ever Jordan World Cup goal. Today, June 17: Portugal v DR Congo, England v Croatia, Uzbekistan v Colombia and Ghana v Panama.",titleEl:"Ημέρα 6: Μέσι, Μπαπέ & Χάαλαντ έλαμψαν — βρόντηξαν οι μεγάλοι",bodyEl:"Η 1η αγωνιστική σε I και J ανέδειξε τα αστέρια. Στο Κάνσας Σίτι, ο Λιονέλ Μέσι στη ρεκόρ 200ή συμμετοχή του πέτυχε χατ-τρικ (17', 60', 76') στο 3-0 της Αργεντινής επί της Αλγερίας, ισοφαρίζοντας το ρεκόρ των 16 τερμάτων του Μίροσλαβ Κλόζε σε Μουντιάλ. Η Γαλλία νίκησε 3-1 τη Σενεγάλη με δύο γκολ του Μπαπέ και ένα του Μπαρκολά. Ο Έρλινγκ Χάαλαντ συστήθηκε με δύο γκολ στο ντεμπούτο του, στο 4-1 της Νορβηγίας επί του Ιράκ στη Βοστώνη (ο Χουσέιν πέτυχε το πρώτο γκολ του Ιράκ σε Μουντιάλ εδώ και 40 χρόνια). Και η Αυστρία πανηγύρισε νίκη σε Μουντιάλ έπειτα από 36 χρόνια, 3-1 επί της πρωτάρας Ιορδανίας — σουτάρα Σμιντ και πέναλτι Άρναούτοβιτς στις καθυστερήσεις, αφού ο Άλι Όλουαν είχε σημειώσει το ιστορικό πρώτο γκολ της Ιορδανίας. Σήμερα 17/6: Πορτογαλία–ΛΔ Κονγκό, Αγγλία–Κροατία, Ουζμπεκιστάν–Κολομβία, Γκάνα–Παναμάς."},
@@ -1284,6 +1315,7 @@ const TOURNAMENT_DATA = {
   ],
 
   changelog:[
+    "2026-06-20 08:00 — Day 9 update: Group C/D Matchday-2 results (USA 2-0 Australia, Morocco 1-0 Scotland, Brazil 3-0 Haiti, Türkiye 0-1 Paraguay). USA qualify; Haiti first eliminated; Türkiye out. 32/32 matches logged. Bilingual Day 9 recap added.",
     "2026-06-19 08:00 — Day 8 update: Group A/B Matchday-2 results (Czechia 1-1 South Africa, Switzerland 4-1 Bosnia, Canada 6-0 Qatar with David hat-trick, Mexico 1-0 South Korea). Mexico first to qualify for Round of 32. 28/28 matches now logged. Bilingual Day 8 recap added.",
     "2026-06-18 08:00 — Day 7 update: Group K/L results (Portugal 1-1 DR Congo, England 4-2 Croatia, Ghana 1-0 Panama, Uzbekistan 1-3 Colombia). Group-stage Matchday 1 complete (24/24). Bilingual Day 7 recap added.",
     "2026-06-17 08:00 — Day 6 update: added Matchday-1 Group I/J results with full detail — M17 France 3-1 Senegal (Mbappé brace), M18 Iraq 1-4 Norway (Haaland brace on WC debut), M19 Argentina 3-0 Algeria (Messi hat-trick, equals Klose record), M20 Austria 3-1 Jordan. Bilingual Day 6 recap added. Sources: ESPN, FIFA, AS, Sky Sports.",
