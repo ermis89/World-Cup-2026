@@ -845,7 +845,7 @@ nav.tabs button.active::after{content:"";position:absolute;left:18%;right:18%;bo
    confirmed playoff results of March 31 2026).
    ════════════════════════════════════════════════════════════════ */
 const TOURNAMENT_DATA = {
-  lastUpdated: "2026-06-21T08:00:00+03:00",
+  lastUpdated: "2026-06-22T08:00:00+03:00",
   dayOne: "2026-06-11",
 
   /* ---------- 48 TEAMS ---------- */
@@ -1274,7 +1274,34 @@ const TOURNAMENT_DATA = {
       cards:[{team:"CUW",player:"Juninho Bacuna",min:53,type:"Y"},{team:"CUW",player:"Livano Comenencia",min:56,type:"Y"},{team:"CUW",player:"Juriën Gaari",min:75,type:"Y"},{team:"CUW",player:"Gervane Kastaneer",min:90,type:"Y"}],
       stats:{possession:[75,25],shots:[27,10],onTarget:[15,3],corners:[9,0]},
       motm:"Eloy Room",
-      lineups:{home:["Galíndez","Hincapié","Pacho","Franco","Estupiñán","Alcívar","Vite","M. Caicedo","Yeboah","Valencia","Plata"],away:["Room","Obispo","Floranus","Gaari","Fonville","Brenet","J. Bacuna","L. Bacuna","Comenencia","Chong","Locadia"]}}
+      lineups:{home:["Galíndez","Hincapié","Pacho","Franco","Estupiñán","Alcívar","Vite","M. Caicedo","Yeboah","Valencia","Plata"],away:["Room","Obispo","Floranus","Gaari","Fonville","Brenet","J. Bacuna","L. Bacuna","Comenencia","Chong","Locadia"]}},
+    {id:36,score:[0,4],pens:null,status:"FT",
+      scorers:[{team:"JPN",player:"Daichi Kamada",min:4},{team:"JPN",player:"Ayase Ueda",min:31},{team:"JPN",player:"Junya Ito",min:69},{team:"JPN",player:"Ayase Ueda",min:83}],
+      assists:[{team:"JPN",player:"Keito Nakamura",min:4},{team:"JPN",player:"Ko Itakura",min:31},{team:"JPN",player:"Ayase Ueda",min:69},{team:"JPN",player:"Kaishu Sano",min:83}],
+      cards:[],
+      stats:{possession:[38,62],shots:[2,11],onTarget:[0,5],corners:[3,5]},
+      motm:"Ayase Ueda",
+      lineups:{home:["Dahmen","Abdi","Bronn","Talbi","Rekik","Valery","Slimane","Skhiri","Mejbri","Saad","Tounekti"],away:["Suzuki","Ito","Itakura","Tomiyasu","Nakamura","Tanaka","Sano","Doan","Kamada","J. Ito","Ueda"]}},
+    {id:37,score:[4,0],pens:null,status:"FT",
+      scorers:[{team:"ESP",player:"Lamine Yamal",min:10},{team:"ESP",player:"Mikel Oyarzabal",min:21},{team:"ESP",player:"Mikel Oyarzabal",min:24},{team:"ESP",player:"Hassan Al-Tambakti (OG)",min:49}],
+      assists:[{team:"ESP",player:"Mikel Oyarzabal",min:10},{team:"ESP",player:"Aymeric Laporte",min:21},{team:"ESP",player:"Dani Olmo",min:24},{team:"ESP",player:"Marc Cucurella",min:49}],
+      cards:[],stats:{},
+      motm:"Mikel Oyarzabal",lineups:{home:[],away:[]}},
+    {id:38,score:[0,0],pens:null,status:"FT",
+      scorers:[],assists:[],
+      cards:[{team:"BEL",player:"Nathan Ngoy",min:66,type:"R"}],
+      stats:{},
+      motm:"Alireza Beiranvand",lineups:{home:[],away:[]}},
+    {id:39,score:[2,2],pens:null,status:"FT",
+      scorers:[{team:"CPV",player:"Kevin Pina",min:21},{team:"URU",player:"Maxi Araújo",min:44},{team:"URU",player:"Agustín Canobbio",min:45},{team:"CPV",player:"Hélio Varela",min:61}],
+      assists:[{team:"URU",player:"Rodrigo Bentancur",min:44},{team:"URU",player:"Maxi Araújo",min:45}],
+      cards:[],stats:{},
+      motm:"Kevin Pina",lineups:{home:[],away:[]}},
+    {id:40,score:[1,3],pens:null,status:"FT",
+      scorers:[{team:"NZL",player:"Finn Surman",min:15},{team:"EGY",player:"Mostafa Zico",min:59},{team:"EGY",player:"Mohamed Salah",min:67},{team:"EGY",player:"Trézéguet",min:82}],
+      assists:[{team:"NZL",player:"Tim Payne",min:15},{team:"EGY",player:"Mohamed Zany",min:59},{team:"EGY",player:"Mostafa Zico",min:67},{team:"EGY",player:"Mohamed Salah",min:82}],
+      cards:[],stats:{},
+      motm:"Mohamed Salah",lineups:{home:[],away:[]}}
   ],
 
   /* Optional manual stat overrides (filled by daily update if needed) */
@@ -1314,6 +1341,7 @@ const TOURNAMENT_DATA = {
   pollOptions:["ESP","FRA","ENG","POR","BRA","ARG","GER","NED"],
 
   news:[
+    {date:"2026-06-21",tag:"Recap",title:"Day 11 Recap: Japan rout Tunisia, Egypt's first win, Cape Verde shock again",body:"Matchday 2 of Groups F, G and H. In the 1,000th World Cup match, Japan thrashed Tunisia 0-4 in Monterrey — Ayase Ueda scoring twice and Daichi Kamada netting Japan's fastest-ever World Cup goal (4') — eliminating Tunisia. Spain roared back to form with Lamine Yamal restored, hammering Saudi Arabia 4-0 (Yamal, an Oyarzabal brace and an own goal). Egypt earned their first-ever World Cup win, coming from behind to beat New Zealand 3-1 with Mohamed Salah scoring and creating to send the Pharaohs top of Group G. Tournament debutants Cape Verde stunned everyone again, holding Uruguay to a 2-2 draw. And Belgium were held 0-0 by Iran despite Nathan Ngoy's 66th-minute red card, goalkeeper Alireza Beiranvand starring. Today, June 22: Argentina v Austria, France v Iraq and more Matchday-2/3 action.",titleEl:"Ημέρα 11: Διέλυσε η Ιαπωνία, πρώτη νίκη Αιγύπτου, νέα έκπληξη Π.Ακρωτηρίου",bodyEl:"2η αγωνιστική σε F, G και H. Στο 1000ό ματς Μουντιάλ, η Ιαπωνία διέλυσε 0-4 την Τυνησία στο Μοντερέι (δύο γκολ Ουέντα, ταχύτερο γκολ Ιαπωνίας στην ιστορία ο Καμάντα στο 4') και την απέκλεισε. Η Ισπανία επέστρεψε στα καλά της με τον Γιαμάλ βασικό, 4-0 τη Σαουδική Αραβία (Γιαμάλ, διπλό Οϊαρθάμπαλ, αυτογκόλ). Η Αίγυπτος πανηγύρισε την πρώτη νίκη της σε Μουντιάλ, ανατροπή 3-1 επί της Ν. Ζηλανδίας με πρωταγωνιστή τον Σαλάχ. Το πρωτάρικο Πράσινο Ακρωτήρι ξανασόκαρε, 2-2 με την Ουρουγουάη. Και το Βέλγιο έμεινε στο 0-0 με το Ιράν παρά την κόκκινη του Νγκόι (66'), με ήρωα τον Μπεϊρανβάντ. Σήμερα 22/6: Αργεντινή–Αυστρία, Γαλλία–Ιράκ κ.ά."},
     {date:"2026-06-20",tag:"Recap",title:"Day 10 Recap: Germany & Netherlands roar, Eloy Room record heroics",body:"Matchday 2 of Groups E and F. Germany reached the knockout stages for the first time since their 2014 triumph, super-sub Deniz Undav scoring twice (including a stoppage-time winner) to beat Ivory Coast 2-1 after Franck Kessie had given the Ivorians the lead. The Netherlands produced a statement 5-1 demolition of Sweden in Houston, Brian Brobbey and Cody Gakpo both bagging braces and Crysencio Summerville adding a fifth. The story of the day was Curacao goalkeeper Eloy Room, whose record 15 saves (the most in a 90-minute World Cup match since 1966) earned the tournament's smallest nation a historic first-ever point in a 0-0 draw with Ecuador. Off the pitch, Tunisia sacked coach Sabri Lamouchi and appointed Herve Renard. Today, June 21: Tunisia v Japan (in progress), Spain v Saudi Arabia and Belgium v Iran.",titleEl:"Ημέρα 10: Βρόντηξαν Γερμανία & Ολλανδία, ιστορικός ο Έλοϊ Ρουμ",bodyEl:"2η αγωνιστική σε E και F. Η Γερμανία προκρίθηκε για πρώτη φορά από το 2014, με τον σούπερ-σαμπ Ντένιζ Ουντάβ να σκοράρει δύο φορές (μαζί με νικητήριο στις καθυστερήσεις) για το 2-1 επί της Ακτής Ελεφαντοστού, αφού είχε προηγηθεί ο Κεσιέ. Η Ολλανδία διέλυσε 5-1 τη Σουηδία στο Χιούστον — διπλά Μπρόμπεϊ & Γκάκπο, πέμπτο ο Σάμερβιλ. Πρωταγωνιστής όμως ο τερματοφύλακας του Κουρασάο Έλοϊ Ρουμ: ρεκόρ 15 αποκρούσεις (το περισσότερο σε ματς Μουντιάλ 90' από το 1966) χάρισαν στο μικρότερο έθνος ιστορικό πρώτο βαθμό, 0-0 με το Εκουαδόρ. Εκτός γηπέδου, η Τυνησία απέλυσε τον Λαμουσί και προσέλαβε τον Ερβέ Ρενάρ. Σήμερα 21/6: Τυνησία–Ιαπωνία (σε εξέλιξη), Ισπανία–Σ.Αραβία, Βέλγιο–Ιράν."},
     {date:"2026-06-19",tag:"Recap",title:"Day 9 Recap: USA qualify, Haiti out, Saibari's fastest goal",body:"Matchday 2 of Groups C and D. The USA became the second team into the Round of 32, beating Australia 2-0 in Seattle (a Burgess own goal and an Alex Freeman header) — though they did it without the injured Christian Pulisic. Brazil cruised past Haiti 3-0 in Philadelphia, Matheus Cunha's brace and a Vinícius Júnior strike confirming Haiti as the first nation eliminated, though Raphinha limped off injured. Morocco edged Scotland 1-0 in Boston through Ismael Saibari's strike after just 70 seconds — the fastest goal of the tournament so far. And Paraguay stunned Türkiye 0-1 in Santa Clara through Matías Galarza's 2nd-minute golazo, holding on with ten men after Miguel Almirón's red card (the new anti-discrimination 'covering the mouth' directive) — a result that eliminates Türkiye and all but seals top spot for the USA. Today, June 20, Matchday 2 continues with Scotland's group and more.",titleEl:"Ημέρα 9: Προκρίθηκαν οι ΗΠΑ, εκτός η Αϊτή, το ταχύτερο γκολ από τον Σαϊμπάρι",bodyEl:"2η αγωνιστική σε C και D. Οι ΗΠΑ έγιναν η δεύτερη ομάδα στη Φάση των 32, με 2-0 επί της Αυστραλίας στο Σιάτλ (αυτογκόλ Μπέρτζες, κεφαλιά Φρίμαν) — χωρίς τον τραυματία Πούλισιτς. Η Βραζιλία επικράτησε 3-0 της Αϊτής στη Φιλαδέλφεια (δύο γκολ Κούνια, ένα Βινίσιους) και η Αϊτή έγινε η πρώτη ομάδα εκτός· ο Ραφίνια βγήκε τραυματίας. Το Μαρόκο νίκησε 1-0 τη Σκωτία με γκολ του Σαϊμπάρι στα πρώτα 70 δευτερόλεπτα — το ταχύτερο της διοργάνωσης. Και η Παραγουάη «λύγισε» 0-1 την Τουρκία στη Σάντα Κλάρα με γκολάρα Γκαλάρσα στο 2', αντέχοντας με 10 παίκτες μετά την κόκκινη του Αλμιρόν — αποτέλεσμα που αποκλείει την Τουρκία. Σήμερα 20/6 συνεχίζεται η 2η αγωνιστική."},
     {date:"2026-06-18",tag:"Recap",title:"Day 8 Recap: David hat-trick & Canada rout, Mexico first to qualify",body:"Matchday 2 began in Groups A and B. Co-hosts Mexico became the first team to reach the Round of 32, edging South Korea 1-0 in Guadalajara through Luis Romo's 50th-minute goal after a goalkeeping error. Canada thrashed nine-man Qatar 6-0 in Vancouver — Jonathan David scoring a hat-trick (Qatar had Madibo and Manai both sent off) for Canada's first-ever World Cup win. Switzerland erupted late to beat 10-man Bosnia 4-1 at SoFi Stadium, substitute Johan Manzambi scoring twice and Xhaka converting a stoppage-time penalty after Muharemović's red card. And South Africa snatched a 1-1 draw with Czechia in Atlanta through Teboho Mokoena's emotional late penalty, cancelling Michal Sadílek's 6th-minute opener — though Mokoena is now suspended for the finale. Today, June 19: Canada v Qatar already done — next up USA v Australia, plus more Matchday-2 action.",titleEl:"Ημέρα 8: Χατ-τρικ Ντέιβιντ & διασυρμός Καναδά, πρώτο προκρίθηκε το Μεξικό",bodyEl:"Άρχισε η 2η αγωνιστική σε A και B. Το Μεξικό έγινε η πρώτη ομάδα που πέρασε στη Φάση των 32, με 1-0 επί της Ν. Κορέας στη Γκουαδαλαχάρα (γκολ Ρόμο 50' μετά από λάθος τερματοφύλακα). Ο Καναδάς διέλυσε 6-0 το Κατάρ (με 9 παίκτες — κόκκινες Μαντίμπο & Μανάι), με χατ-τρικ του Τζόναθαν Ντέιβιντ για την πρώτη νίκη του Καναδά σε Μουντιάλ. Η Ελβετία «εξερράγη» στο φινάλε, 4-1 τη Βοσνία (με 10 παίκτες) — δύο γκολ ο Μανζάμπι, πέναλτι Τσάκα στο 90+7'. Και η Ν. Αφρική πήρε 1-1 με την Τσεχία στην Ατλάντα χάρη σε συγκινησιακό πέναλτι του Μοκοένα, ο οποίος όμως τιμωρείται για το επόμενο. Σήμερα 19/6: ΗΠΑ–Αυστραλία και άλλα ματς 2ης αγωνιστικής."},
@@ -1332,6 +1360,7 @@ const TOURNAMENT_DATA = {
   ],
 
   changelog:[
+    "2026-06-22 08:00 — Day 11 update: Group F/G/H Matchday-2 results (Japan 4-0 Tunisia in the 1000th WC match, Spain 4-0 Saudi Arabia, Egypt 3-1 New Zealand for first-ever WC win, Uruguay 2-2 Cape Verde, Iran 0-0 Belgium). Tunisia eliminated. 40 matches logged.",
     "2026-06-21 08:00 — Day 10 update: Group E/F Matchday-2 results (Netherlands 5-1 Sweden, Germany 2-1 Ivory Coast, Ecuador 0-0 Curacao with a record 15 saves from Eloy Room). Germany qualify; Tunisia coach updated to Herve Renard. Tunisia v Japan still in progress, added tomorrow.",
     "2026-06-20 08:00 — Day 9 update: Group C/D Matchday-2 results (USA 2-0 Australia, Morocco 1-0 Scotland, Brazil 3-0 Haiti, Türkiye 0-1 Paraguay). USA qualify; Haiti first eliminated; Türkiye out. 32/32 matches logged. Bilingual Day 9 recap added.",
     "2026-06-19 08:00 — Day 8 update: Group A/B Matchday-2 results (Czechia 1-1 South Africa, Switzerland 4-1 Bosnia, Canada 6-0 Qatar with David hat-trick, Mexico 1-0 South Korea). Mexico first to qualify for Round of 32. 28/28 matches now logged. Bilingual Day 8 recap added.",
